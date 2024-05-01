@@ -9,6 +9,7 @@ import {
   Sound,
 } from "https://unpkg.com/leopard@^1/dist/index.esm.js";
 
+// Initialize the existing array
 var csvFileData = [];  
 
 // Function to download CSV file
@@ -74,11 +75,10 @@ export default class Leaphy extends Sprite {
     this.direction = 90;
     while (true) {
       if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(255, 0, 0))) { //yellow touching red
-        // this.writeDataToCSV(["Leaphy is touching red", "Yellow"]);
 
-        csvFileData [0] = ["Leaphy is touching red", "Yellow"];
+        csvFileData.push(["Leaphy is touching red", "Yellow"]);
+        console.log(csvFileData);
 
-        console.log("Leaphy [1] is touching red");
         yield* this.wait(5);
         for (let i = 0; i < 20; i++) {
           this.move(2);
@@ -86,7 +86,9 @@ export default class Leaphy extends Sprite {
         }
       }
       if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(0, 255, 21))) { //yellow touching green
-        console.log("Leaphy [1] is touching green");
+        csvFileData.push(["Leaphy is touching green", "Yellow"]);
+        console.log(csvFileData);
+
         yield* this.wait(3);
         for (let i = 0; i < 20; i++) {
           this.move(2);
@@ -94,7 +96,8 @@ export default class Leaphy extends Sprite {
         }
       }
       if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(0, 94, 255))) { //yellow touching blue
-        console.log("Leaphy [1] is touching blue");
+        csvFileData.push(["Leaphy is touching blue", "Yellow"]);
+        console.log(csvFileData);
         yield* this.wait(2);
         for (let i = 0; i < 20; i++) {
           this.move(2);
