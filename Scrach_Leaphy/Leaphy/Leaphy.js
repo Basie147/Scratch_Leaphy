@@ -9,6 +9,8 @@ import {
   Sound,
 } from "https://unpkg.com/leopard@^1/dist/index.esm.js";
 
+import { connectToSerial, registerListener, unregisterListener } from '../Lib/serialFunctions.js';
+
 // Initialize the existing array
 var csvFileData = [];  
 
@@ -71,50 +73,68 @@ export default class Leaphy extends Sprite {
   
 
   *whenGreenFlagClicked() {
+    registerListener(this);
+    document.getElementById("connect").addEventListener("click", connectToSerial);
     this.goto(140, -150);
     this.direction = 90;
+
+    // if presed true or false
+    var button = false;
+    document.getElementById("myButton").addEventListener("click", () => {
+     button =  true;
+    } );
+
+
+
+
+
+
+//  simulation of the leaphy
     while (true) {
-      if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(255, 0, 0))) { //yellow touching red
+      if (button) {
+        if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(255, 0, 0))) { //yellow touching red
 
-        csvFileData.push(["Leaphy is touching red", "Yellow"]);
-        console.log(csvFileData);
+          csvFileData.push(["Leaphy is touching red", "Yellow"]);
+          console.log(csvFileData);
 
-        yield* this.wait(5);
-        for (let i = 0; i < 20; i++) {
-          this.move(2);
-          yield;
+          yield* this.wait(5);
+          for (let i = 0; i < 20; i++) {
+            this.move(2);
+            yield;
+          }
         }
-      }
-      if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(0, 255, 21))) { //yellow touching green
-        csvFileData.push(["Leaphy is touching green", "Yellow"]);
-        console.log(csvFileData);
+        if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(0, 255, 21))) { //yellow touching green
+          // csvFileData.push(["Leaphy is touching green", "Yellow"]);
+          // console.log(csvFileData);
 
-        yield* this.wait(3);
-        for (let i = 0; i < 20; i++) {
-          this.move(2);
-          yield;
+          yield* this.wait(3);
+          for (let i = 0; i < 20; i++) {
+            this.move(2);
+            yield;
+          }
         }
-      }
-      if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(0, 94, 255))) { //yellow touching blue
-        csvFileData.push(["Leaphy is touching blue", "Yellow"]);
-        console.log(csvFileData);
-        yield* this.wait(2);
-        for (let i = 0; i < 20; i++) {
-          this.move(2);
-          yield;
+        if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(0, 94, 255))) { //yellow touching blue
+          // csvFileData.push(["Leaphy is touching blue", "Yellow"]);
+          // console.log(csvFileData);
+          yield* this.wait(2);
+          for (let i = 0; i < 20; i++) {
+            this.move(2);
+            yield;
+          }
         }
+        if (this.colorTouching(Color.rgb(153, 102, 255), Color.rgb(0, 0, 0))) { //purple touching black
+          this.direction -= 10;
+        }
+        if (this.colorTouching(Color.rgb(0, 255, 232), Color.rgb(0, 0, 0))) {
+          this.direction += 10;
+        }
+        if (this.colorTouching(Color.rgb(249, 0, 255), Color.rgb(119, 180, 68))) {  //pink touching light green
+          this.move(-2);
+        }
+        this.move(2);
       }
-      if (this.colorTouching(Color.rgb(153, 102, 255), Color.rgb(0, 0, 0))) { //purple touching black
-        this.direction -= 10;
-      }
-      if (this.colorTouching(Color.rgb(0, 255, 232), Color.rgb(0, 0, 0))) {
-        this.direction += 10;
-      }
-      if (this.colorTouching(Color.rgb(249, 0, 255), Color.rgb(119, 180, 68))) {  //pink touching light green
-        this.move(-2);
-      }
-      this.move(2);
       yield;
+
     }
   }
 }
