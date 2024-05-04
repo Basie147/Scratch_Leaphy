@@ -24,6 +24,18 @@ export default class Leaphy extends Sprite {
     ];
   }
 
+  interpretSerialCommands(text) {
+    if (text.includes('996189468')) {
+
+    
+      if (text.includes('Forward')) this.move(5);
+      if (text.includes('stop')) this.move(0);
+      if (text.includes('Right')) this.direction -= 10;
+      if (text.includes('Left')) this.direction += 10;
+    }
+  }
+
+
   *whenGreenFlagClicked() {
     registerListener(this);
     document.getElementById("connect").addEventListener("click", connectToSerial);
@@ -36,13 +48,16 @@ export default class Leaphy extends Sprite {
      button =  true;
     } );
 
+
+
+
 //  simulation of the leaphy
     while (true) {
       if (button) {
         if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(255, 0, 0))) { //yellow touching red
 
           csvFileData.push(["Leaphy is touching red", "Yellow"]);
-          console.log(csvFileData);
+       
 
           yield* this.wait(5);
           for (let i = 0; i < 20; i++) {
@@ -52,8 +67,7 @@ export default class Leaphy extends Sprite {
         }
         if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(0, 255, 21))) { //yellow touching green
           csvFileData.push(["Leaphy is touching green", "Yellow"]);
-          console.log(csvFileData);
-
+     
           yield* this.wait(3);
           for (let i = 0; i < 20; i++) {
             this.move(2);
@@ -62,7 +76,7 @@ export default class Leaphy extends Sprite {
         }
         if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(0, 94, 255))) { //yellow touching blue
           csvFileData.push(["Leaphy is touching blue", "Yellow"]);
-          console.log(csvFileData);
+
           yield* this.wait(2);
           for (let i = 0; i < 20; i++) {
             this.move(2);

@@ -30,6 +30,17 @@ export default class Leaphy2 extends Sprite {
     ];
   }
 
+  interpretSerialCommands(text) {
+    if (text.includes('996236176')) {
+
+    
+      if (text.includes('Forward')) this.move(5);
+      if (text.includes('stop')) this.move(0);
+      if (text.includes('Right')) this.direction -= 10;
+      if (text.includes('Left')) this.direction += 10;
+    }
+  }
+
   *whenGreenFlagClicked() {
     registerListener(this);
     document.getElementById("connect").addEventListener("click", connectToSerial);
@@ -49,8 +60,8 @@ export default class Leaphy2 extends Sprite {
       if (button) {
         if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(255, 0, 0))) { //yellow touching red
 
-          csvFileData.push(["Leaphy2 is touching red", "Yellow"]);
-          console.log(csvFileData);
+          csvFileData.push(["Leaphy is touching red", "Yellow"]);
+      
 
           yield* this.wait(5);
           for (let i = 0; i < 20; i++) {
@@ -59,9 +70,8 @@ export default class Leaphy2 extends Sprite {
           }
         }
         if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(0, 255, 21))) { //yellow touching green
-          csvFileData.push(["Leaphy2 is touching green", "Yellow"]);
-          console.log(csvFileData);
-
+          csvFileData.push(["Leaphy is touching green", "Yellow"]);
+    
           yield* this.wait(3);
           for (let i = 0; i < 20; i++) {
             this.move(2);
@@ -69,8 +79,8 @@ export default class Leaphy2 extends Sprite {
           }
         }
         if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(0, 94, 255))) { //yellow touching blue
-          csvFileData.push(["Leaphy2 is touching blue", "Yellow"]);
-          console.log(csvFileData);
+          csvFileData.push(["Leaphy_1 Detect BLUE is touching blue", "Yellow"]);
+      
           yield* this.wait(2);
           for (let i = 0; i < 20; i++) {
             this.move(2);
@@ -78,6 +88,7 @@ export default class Leaphy2 extends Sprite {
           }
         }
         if (this.colorTouching(Color.rgb(153, 102, 255), Color.rgb(0, 0, 0))) { //purple touching black
+          
           this.direction -= 10;
         }
         if (this.colorTouching(Color.rgb(0, 255, 232), Color.rgb(0, 0, 0))) {

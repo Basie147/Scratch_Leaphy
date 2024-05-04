@@ -1,63 +1,57 @@
-<!--
-  Congratulations! Your project has been converted to JavaScript!
-
-  You should see a working preview of your project on the right side of
-  the screen. If not, it means something went wrong.
-
-  Your project's code is all stored in the files on the left side of the
-  screen. You can edit the JavaScript code and your project will change.
-  But you have to save your changes using File > Save or Ctrl+S on your
-  keyboard before the project preview will update.
--->
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leopard@^1/dist/index.min.css"
-    />
-  </head>
-  <body>
-    <button id="greenFlag">Start position</button>
-    <button id="connect">Connect Serial</button>
-    <button id="myButton">Simulate</button>
-    <button id="download-btn">Download CSV</button>
-    <div id="project"></div>
-
-    <script type="module">
-      import project from "./index.js";
-
-      project.attach("#project");
-
-      document.querySelector("#greenFlag").addEventListener("click", () => {
-        project.greenFlag();
-      });
-
-      // Autoplay
-      project.greenFlag();
-    </script>
-    
-  </body>
-</html>
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Leaphy Digital Twin</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-between; /* Aligns children (divs) side by side */
+        }
+        #csv-display {
+            width: 50%; /* Adjust width as necessary */
+            padding: 20px;
+            border: 1px solid #ccc; /* Just for visibility */
+            overflow: auto; /* Adds scrollbar if needed */
+            height: 90vh; /* Adjust height based on view height */
+        }
+        #controls {
+            width: 45%; /* Adjust width as necessary */
+            padding: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/leopard@^1/dist/index.min.css" />
 </head>
 <body>
-    
-    <pre id="csv-display"></pre> <!-- Display the CSV data here -->
+    <div id="controls">
+        <button id="greenFlag">Start position</button>
+        <button id="connect">Connect Serial</button>
+        <button id="myButton">Simulate</button>
+        <button id="download-btn">Download CSV</button>
+        <div id="project"></div>
+    </div>
 
-    <script src="index.js"></script> <!-- Include JavaScript file -->
- 
+    <pre id="csv-display"></pre> <!-- Area to display CSV data -->
+
+    <script type="module">
+        import project from "./index.js";
+        import { csvFileData } from '../Lib/csv.js';
+
+        project.attach("#project");
+
+        document.querySelector("#greenFlag").addEventListener("click", () => {
+            project.greenFlag();
+        });
+
+        // Autoplay
+        project.greenFlag();
+
+        // Function to display CSV data
+        async function displayCSVData() {
+            const displayArea = document.getElementById('csv-display');
+            displayArea.textContent = await csvFileData(); // Assuming csvFileData() returns a Promise that resolves to CSV data
+        }
+
+        displayCSVData();
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-

@@ -1,50 +1,47 @@
-
-// Initialize the existing array
-var csvFileData = [];  
-
-// Attach event listener to the button
-document.getElementById('download-btn').addEventListener('click', download_csv_file);
-
-// Function to download CSV file
-function download_csv_file() {
-    // Define the heading for each row of the data
+// Function to update CSV display
+function updateCSVDisplay(csvData) {
     var csv = 'Leaphy logbook\n';
-  
-    // Merge the data with CSV
-    csvFileData.forEach(function(row) {
+    csvData.forEach(function(row) {
         csv += row.join(',');
         csv += "\n";
     });
-      // Display the created CSV data in the preformatted block
-  document.getElementById('csv-display').textContent = csv;
-
-  // Create an anchor element to initiate download
-  var hiddenElement = document.createElement('a');
-  hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
-  hiddenElement.target = '_blank';
-  hiddenElement.download = 'Leaphy_Log.csv';
-  hiddenElement.click();
+    document.getElementById('csv-display').textContent = csv;
 }
 
-function writeDataToCSV(csvData, data) {
-    csvData.push(data); // Push data to the CSV array
-}
-  
-function generateCSV(csvData) {
-    let csv = 'Leaphy Activity,Color\n'; // Header row
+// Initializing the proxy around csvFileData array
+const csvFileDataHandler = {
+    set(target, property, value) {
+        target[property] = value;
+        // Update the display whenever csvFileData changes
+        updateCSVDisplay(target);
+        return true; // indicates that the property was successfully set
+    }
+};
 
+const csvFileData = new Proxy([], csvFileDataHandler);
+
+// Attach event listener to the button
+document.getElementById('download-btn').addEventListener('click', () => {
+    download_csv_file(csvFileData);
+});
+
+// Function to download CSV file
+function download_csv_file(csvData) {
+    var csv = 'Leaphy logbook\n';
     csvData.forEach(function(row) {
-        csv += row.join(',') + '\n'; // Concatenate data with CSV format
+        csv += row.join(',');
+        csv += "\n";
     });
-
-    const hiddenElement = document.createElement('a');
+    var hiddenElement = document.createElement('a');
     hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
     hiddenElement.target = '_blank';
-    hiddenElement.download = 'LeaphyActivity.csv'; // Provide a name for the CSV file
+    hiddenElement.download = 'Leaphy_Log.csv';
     hiddenElement.click();
 }
-  
 
+// Example usage
+function addDataToCSV(newData) {
+    csvFileData.push(newData); // This will automatically update the CSV display
+}
 
-
-export { download_csv_file , csvFileData};
+export { download_csv_file, csvFileData, addDataToCSV };
