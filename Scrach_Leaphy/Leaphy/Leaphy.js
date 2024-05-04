@@ -10,34 +10,15 @@ import {
 } from "https://unpkg.com/leopard@^1/dist/index.esm.js";
 
 import { connectToSerial, registerListener, unregisterListener } from '../Lib/serialFunctions.js';
+import { csvFileData } from '../Lib/csv.js';
 
-// Initialize the existing array
-var csvFileData = [];  
 
-// Function to download CSV file
-function download_csv_file() {
-  // Define the heading for each row of the data
-  var csv = 'Name,Profession\n';
 
-  // Merge the data with CSV
-  csvFileData.forEach(function(row) {
-      csv += row.join(',');
-      csv += "\n";
-  });
 
-  // Display the created CSV data in the preformatted block
-  document.getElementById('csv-display').textContent = csv;
 
-  // Create an anchor element to initiate download
-  var hiddenElement = document.createElement('a');
-  hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
-  hiddenElement.target = '_blank';
-  hiddenElement.download = 'Famous Personalities.csv';
-  hiddenElement.click();
-}
 
-// Attach event listener to the button
-document.getElementById('download-btn').addEventListener('click', download_csv_file);
+
+
 export default class Leaphy extends Sprite {
   constructor(...args) {
     super(...args);
@@ -53,23 +34,7 @@ export default class Leaphy extends Sprite {
     ];
   }
 
-  writeDataToCSV(data) {
-    this.csvData.push(data); // Push data to the CSV array
-  }
 
-  generateCSV() {
-    let csv = 'Leaphy Activity,Color\n'; // Header row
-
-    this.csvData.forEach(function(row) {
-      csv += row.join(',') + '\n'; // Concatenate data with CSV format
-    });
-
-    const hiddenElement = document.createElement('a');
-    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
-    hiddenElement.target = '_blank';
-    hiddenElement.download = 'LeaphyActivity.csv'; // Provide a name for the CSV file
-    hiddenElement.click();
-  }
   
 
   *whenGreenFlagClicked() {
@@ -83,11 +48,6 @@ export default class Leaphy extends Sprite {
     document.getElementById("myButton").addEventListener("click", () => {
      button =  true;
     } );
-
-
-
-
-
 
 //  simulation of the leaphy
     while (true) {
