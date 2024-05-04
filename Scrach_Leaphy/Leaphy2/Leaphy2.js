@@ -9,6 +9,9 @@ import {
   Sound,
 } from "https://unpkg.com/leopard@^1/dist/index.esm.js";
 
+import { connectToSerial, registerListener, unregisterListener } from '../Lib/serialFunctions.js';
+import { csvFileData } from '../Lib/csv.js';
+
 export default class Leaphy2 extends Sprite {
   constructor(...args) {
     super(...args);
@@ -28,32 +31,25 @@ export default class Leaphy2 extends Sprite {
   }
 
   *whenGreenFlagClicked() {
+    registerListener(this);
+    document.getElementById("connect").addEventListener("click", connectToSerial);
+
     this.goto(100, -150);
     this.direction = 90;
 
-        // leaphy2.js
-    document.addEventListener('DOMContentLoaded', function () {
-      const button = document.getElementById('myButton');
-      button.addEventListener('click', function() {
-          console.log('Button clicked in leaphy2.js');
-          // Add more logic here specific to leaphy2.js
-      });
-    });
 
-    // if presed true or false
+   // if presed true or false
     var button = false;
     document.getElementById("myButton").addEventListener("click", () => {
-      button = !button;
-    });
-
-
+     button =  true;
+    } );
 
 //  simulation of the leaphy
     while (true) {
       if (button) {
         if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(255, 0, 0))) { //yellow touching red
 
-          csvFileData.push(["Leaphy is touching red", "Yellow"]);
+          csvFileData.push(["Leaphy2 is touching red", "Yellow"]);
           console.log(csvFileData);
 
           yield* this.wait(5);
@@ -63,7 +59,7 @@ export default class Leaphy2 extends Sprite {
           }
         }
         if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(0, 255, 21))) { //yellow touching green
-          csvFileData.push(["Leaphy is touching green", "Yellow"]);
+          csvFileData.push(["Leaphy2 is touching green", "Yellow"]);
           console.log(csvFileData);
 
           yield* this.wait(3);
@@ -73,7 +69,7 @@ export default class Leaphy2 extends Sprite {
           }
         }
         if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(0, 94, 255))) { //yellow touching blue
-          csvFileData.push(["Leaphy is touching blue", "Yellow"]);
+          csvFileData.push(["Leaphy2 is touching blue", "Yellow"]);
           console.log(csvFileData);
           yield* this.wait(2);
           for (let i = 0; i < 20; i++) {

@@ -22,7 +22,7 @@ function download_csv_file() {
   var hiddenElement = document.createElement('a');
   hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
   hiddenElement.target = '_blank';
-  hiddenElement.download = 'Famous Personalities.csv';
+  hiddenElement.download = 'Leaphy_Log.csv';
   hiddenElement.click();
 }
 
