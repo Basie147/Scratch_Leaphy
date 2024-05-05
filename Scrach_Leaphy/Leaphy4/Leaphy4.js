@@ -1,5 +1,3 @@
-/* eslint-disable require-yield, eqeqeq */
-
 import { Sprite, Trigger, Costume, Color } from "https://unpkg.com/leopard@^1/dist/index.esm.js";
 import { connectToSerial, registerListener } from '../Lib/serialFunctions.js';
 import { csvFileData } from '../Lib/csv.js';
@@ -7,6 +5,7 @@ import { csvFileData } from '../Lib/csv.js';
 // Define the constant
 const LEAPHYNUMBER = '4';
 const COMMAND_NUMBER = '0';
+
 const xpos = 20;
 const ypos = -150;
 
@@ -15,44 +14,43 @@ export default class Leaphy4 extends Sprite {
     super(...args);
     this.costumes = [new Costume("Leaphy", "./Leaphy4/costumes/Leaphy.png", { x: 273, y: 258 })];
     this.triggers = [new Trigger(Trigger.GREEN_FLAG, this.whenGreenFlagClicked)];
+    this.speed = 2.0; // Define speed as a class property
+    this.turnDegree = 10; // Define turnDegree as a class property
+    this.button = false; // initialize as a class property
+    
   }
+
+  // Interpret serial commands
+  interpretSerialCommands = (text) => {
+    if (text.includes(COMMAND_NUMBER)) {
+      if (text.includes('Forward')) this.move(this.speed);
+      if (text.includes('stop')) this.move(0);
+      if (text.includes('Right')) this.direction -= this.turnDegree;
+      if (text.includes('Left')) this.direction += this.turnDegree;
+    }
+  };
 
   *whenGreenFlagClicked() {
     // Setup event listeners
     registerListener(this);
     document.getElementById("connect").addEventListener("click", connectToSerial);
-    document.getElementById("myButton").addEventListener("click", () => { button = !button; });
-
-    // Set initial configurations
+    document.getElementById("myButton").addEventListener("click", () => { this.button = !this.button; });
+  
     this.goto(xpos, ypos);
     this.direction = 90;
-    let button = false;
-    let speed = 2.0;
-    let turnDegree = 10;
-
+  
     document.getElementById("speedButton").addEventListener("click", () => {
-      speed = parseFloat(document.getElementById("speedInput").value);
-      document.getElementById("speedValue").textContent = speed.toFixed(1).replace('.', ',');
+      this.speed = parseFloat(document.getElementById("speedInput").value);
+      document.getElementById("speedValue").textContent = this.speed.toFixed(1).replace('.', ',');
     });
-
+  
     document.getElementById("turnButton").addEventListener("click", () => {
-      turnDegree = document.getElementById("turnInput").value;
-      document.getElementById("turnValue").textContent = turnDegree;
+      this.turnDegree = parseInt(document.getElementById("turnInput").value);
+      document.getElementById("turnValue").textContent = this.turnDegree;
     });
-
-    // Interpret serial commands
-    const interpretSerialCommands = (text) => {
-      if (text.includes(COMMAND_NUMBER)) {
-        if (text.includes('Forward')) this.move(speed);
-        if (text.includes('stop')) this.move(0);
-        if (text.includes('Right')) this.direction -= turnDegree;
-        if (text.includes('Left')) this.direction += turnDegree;
-      }
-    };
-
-    // Simulation loop
+  
     while (true) {
-      if (button) {
+      if (this.button) {
         const yellow = Color.rgb(255, 247, 0);
         const red = Color.rgb(255, 0, 0);
         const green = Color.rgb(0, 255, 21);
@@ -81,24 +79,18 @@ export default class Leaphy4 extends Sprite {
           for (let i = 0; i < 20; i++) {this.move(2); yield;}
         }
         if (this.colorTouching(purple, black)) { // Purple touching black
-          this.direction -= turnDegree;
+          this.direction -= this.turnDegree;
         }
         if (this.colorTouching(Color.rgb(0, 255, 232), black)) {
-          this.direction += turnDegree;
+          this.direction += this.turnDegree;
         }
         if (this.colorTouching(pink, lightGreen)) {  // Pink touching light green
-          this.move(-speed);
+          this.move(-this.speed);
         }
-        this.move(speed);
+        this.move(this.speed);
       }
       yield;
     }
   }
-
-  *moveAndWait(speed, steps) {
-    for (let i = 0; i < steps; i++) {
-      this.move(speed);
-      yield;
-    }
-  }
 }
+
