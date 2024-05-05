@@ -74,7 +74,7 @@ export default class Leaphy7 extends Sprite {
         }
         if (this.colorTouching(yellow, blue)) { // Yellow touching blue
          
-          csvFileData.push([`Leaphy_${LEAPHYNUMBER} is touching bkye`, "Yellow"]);
+          csvFileData.push([`Leaphy_${LEAPHYNUMBER} is touching blue`, "Yellow"]);
           yield* this.wait(2);
           for (let i = 0; i < 20; i++) {this.move(2); yield;}
         }
