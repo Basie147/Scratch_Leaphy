@@ -24,16 +24,17 @@
         #csv-display {
             flex: 1;
             padding: 20px;
-            border-left: 1px solid #ccc; /* Separator for visual distinction */
             overflow: auto;
             height: 50vh;
             background-color: #fff; /* White background for the display area */
+            margin-right: 20px; /* Move the display area to the right */
         }
 
         /* Control panel styles */
         #controls, #project {
             width: 50%;
             padding: 1px;
+            margin: 10px;
             color: #ffffff; /* White text color */
         }
 
@@ -84,6 +85,7 @@
             <div id="project"></div>
         </div>
         <!-- CSV display area -->
+        
         <pre id="csv-display"></pre>
     </div>
 
@@ -117,10 +119,17 @@
         
           <!-- Right side -->
         <div>
-            <h2>Amount of Leaphys</h2>
-            <input type="number" id="numLeaphys" min="1" max="10" value="1">
+            <h2>Amount Leaphys</h2>
+            <input type="number" id="numLeaphys" min="1" max="10" value="10">
             <button id="showButton">Show Leaphys</button>
         </div>
+
+        <div>
+            <h2>Change template</h2>
+            <input type="number" id="template" min="1" max="3" value="1">
+            <button id="templateButton">Change template</button>
+        </div>
+
     </div>
 
     <script>
