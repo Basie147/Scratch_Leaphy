@@ -26,21 +26,21 @@
             padding: 20px;
             border-left: 1px solid #ccc; /* Separator for visual distinction */
             overflow: auto;
-            height: 60vh;
+            height: 50vh;
             background-color: #fff; /* White background for the display area */
         }
 
         /* Control panel styles */
         #controls, #project {
             width: 50%;
-            padding: 20px;
+            padding: 1px;
             color: #ffffff; /* White text color */
         }
 
         /* Serial interface styles */
         #serial-interface {
             width: 100%;
-            padding: 20px;
+            padding: 10px;
             border-top: 1px solid #ccc;
             background-color: #343444; /* A darker shade of blue for the bottom area */
             color: #ffffff; /* White text for visibility */
@@ -95,7 +95,27 @@
             <input type="text" id="messageToSend" placeholder="Enter message to send">
             <button id="send">Send Message</button>
         </div>
+      
+    </div>
+
+    <!-- simulte interface -->
+    <div id="serial-interface" style="display: flex; justify-content: flex-start; padding: 10px;">
+        <!-- Left side -->
+        <div>
+            <h2>Speed: <span id="speedValue">2.0</span></h2>
+            <input type="range" id="speedInput" min="0" max="10" value="2" step="0.1">
+            <button id="speedButton">Set Speed</button>
+        </div>
+        
+        
         <!-- Right side -->
+        <div>
+            <h2>Turn Degree: <span id="turnValue">10</span></h2>
+            <input type="range" id="turnInput" min="0" max="90" value="10">
+            <button id="turnButton">Set Turn Degree</button>
+        </div>
+        
+          <!-- Right side -->
         <div>
             <h2>Amount of Leaphys</h2>
             <input type="number" id="numLeaphys" min="1" max="10" value="1">
@@ -103,10 +123,19 @@
         </div>
     </div>
 
+    <script>
+        document.querySelectorAll('input[type="range"]').forEach(input => {
+            const span = document.getElementById(input.id.replace("Input", "Value"));
+            input.addEventListener('input', () => span.textContent = input.value);
+        });
+    </script>
 
 
-    <!-- Link to External JavaScript File -->
-    <script src="serial-connection.js"></script>
+
+
+
+    <!-- Link to External JavaScript File
+    <script src="serial-connection.js"></script> -->
 
     <script type="module">
         import project from "./index.js";

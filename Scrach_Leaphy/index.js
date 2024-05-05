@@ -133,8 +133,8 @@ function showLeaphys() {
     sprites[name].visible = shouldBeVisible;
     console.log(`${name} set to visible: ${shouldBeVisible}`);
   });
+  project.greenFlag();
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const showButton = document.getElementById('showButton');
