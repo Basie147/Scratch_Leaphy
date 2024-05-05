@@ -6,13 +6,13 @@ import { csvFileData } from '../Lib/csv.js';
 const LEAPHYNUMBER = '6';
 const COMMAND_NUMBER = '0';
 
-const xpos = -60;
+const xpos = 220 - LEAPHYNUMBER * 40;
 const ypos = -150;
 
-export default class Leaphy5 extends Sprite {
+export default class Leaphy6 extends Sprite {
   constructor(...args) {
     super(...args);
-    this.costumes = [new Costume("Leaphy", "./Leaphy5/costumes/Leaphy.png", { x: 273, y: 258 })];
+    this.costumes = [new Costume("Leaphy", "./Leaphy6/costumes/Leaphy.png", { x: 273, y: 258 })];
     this.triggers = [new Trigger(Trigger.GREEN_FLAG, this.whenGreenFlagClicked)];
     this.speed = 2.0; // Define speed as a class property
     this.turnDegree = 10; // Define turnDegree as a class property

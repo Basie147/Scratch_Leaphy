@@ -6,7 +6,7 @@ import { csvFileData } from '../Lib/csv.js';
 const LEAPHYNUMBER = '5';
 const COMMAND_NUMBER = '0';
 
-const xpos = -20;
+const xpos = 220 - LEAPHYNUMBER * 40;
 const ypos = -150;
 
 export default class Leaphy5 extends Sprite {

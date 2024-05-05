@@ -1,3 +1,4 @@
+
 import { Sprite, Trigger, Costume, Color } from "https://unpkg.com/leopard@^1/dist/index.esm.js";
 import { connectToSerial, registerListener } from '../Lib/serialFunctions.js';
 import { csvFileData } from '../Lib/csv.js';
@@ -6,7 +7,7 @@ import { csvFileData } from '../Lib/csv.js';
 const LEAPHYNUMBER = '2';
 const COMMAND_NUMBER = '996236176';
 
-const xpos = 100;
+const xpos = 220 - LEAPHYNUMBER * 40;
 const ypos = -150;
 
 export default class Leaphy2 extends Sprite {
