@@ -17,6 +17,8 @@ export default class Leaphy4 extends Sprite {
     this.speed = 2.0; // Define speed as a class property
     this.turnDegree = 10; // Define turnDegree as a class property
     this.button = false; // initialize as a class property
+    this.frame = 1/30; // Define frame as a class property
+ 
     
   }
 
@@ -48,6 +50,13 @@ export default class Leaphy4 extends Sprite {
       this.turnDegree = parseInt(document.getElementById("turnInput").value);
       document.getElementById("turnValue").textContent = this.turnDegree;
     });
+   
+    document.getElementById("framerateButton").addEventListener("click", () => {
+      this.frame = parseInt(document.getElementById("framerate").value);
+      this.frame = 1 / this.frame;
+    });
+    
+
   
     while (true) {
       if (this.button) {
@@ -90,7 +99,7 @@ export default class Leaphy4 extends Sprite {
         this.move(this.speed);
       }
       yield;
+      yield* this.wait(this.frame);
     }
   }
 }
-
