@@ -49,18 +49,17 @@ export default class Leaphy2 extends Sprite {
     this.direction = 90;
 
 
-   // if presed true or false
     var button = false;
     document.getElementById("myButton").addEventListener("click", () => {
-     button =  true;
-    } );
+     button = !button;
+    });
 
 //  simulation of the leaphy
     while (true) {
       if (button) {
         if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(255, 0, 0))) { //yellow touching red
 
-          csvFileData.push(["Leaphy is touching red", "Yellow"]);
+          csvFileData.push(["Leaphy_2 is touching red", "Yellow"]);
       
 
           yield* this.wait(5);
@@ -70,7 +69,7 @@ export default class Leaphy2 extends Sprite {
           }
         }
         if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(0, 255, 21))) { //yellow touching green
-          csvFileData.push(["Leaphy is touching green", "Yellow"]);
+          csvFileData.push(["Leaphy_2 is touching green", "Yellow"]);
     
           yield* this.wait(3);
           for (let i = 0; i < 20; i++) {
@@ -79,7 +78,7 @@ export default class Leaphy2 extends Sprite {
           }
         }
         if (this.colorTouching(Color.rgb(255, 247, 0), Color.rgb(0, 94, 255))) { //yellow touching blue
-          csvFileData.push(["Leaphy_1 Detect BLUE is touching blue", "Yellow"]);
+          csvFileData.push(["Leaphy_2 Detect BLUE is touching blue", "Yellow"]);
       
           yield* this.wait(2);
           for (let i = 0; i < 20; i++) {

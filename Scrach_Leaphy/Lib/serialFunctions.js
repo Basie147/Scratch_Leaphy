@@ -31,7 +31,7 @@ async function connectToSerial() {
 
   try {
     port = await navigator.serial.requestPort();
-    await port.open({ baudRate: 9600 });
+    await port.open({ baudRate: 115200 });
     console.log("Connected to a serial port.");
     handleSerialData();
   } catch (error) {
@@ -61,6 +61,21 @@ async function handleSerialData() {
     if (reader) {
       reader.releaseLock();
     }
+  }
+}
+
+document.getElementById("send").addEventListener('click', sendMessage);
+
+async function sendMessage() {
+  const textEncoder = new TextEncoder();
+  const dataToSend = textEncoder.encode(document.getElementById('messageToSend').value);
+  if (port && port.writable) {
+      const writer = port.writable.getWriter();
+      await writer.write(dataToSend);
+      writer.releaseLock();
+      console.log("Message sent:", document.getElementById('messageToSend').value);
+  } else {
+      console.error("Port not connected or not writable.");
   }
 }
 

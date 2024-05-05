@@ -39,6 +39,8 @@ function download_csv_file(csvData) {
     hiddenElement.click();
 }
 
+
+
 // Example usage
 function addDataToCSV(newData) {
     csvFileData.push(newData); // This will automatically update the CSV display

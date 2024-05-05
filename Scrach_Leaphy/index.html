@@ -4,33 +4,81 @@
     <title>Leaphy Digital Twin</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
             display: flex;
-            justify-content: space-between; /* Aligns children (divs) side by side */
+            flex-direction: column;
+            background-color: #e5e5e5; /* Light grey background for contrast */
+            color: #333; /* Dark grey text color for readability */
+            font-family: Arial, sans-serif; /* Setting a clean, modern font */
+        }
+        .top-container {
+            display: flex;
+            background-color: #e8e2e2; /* Blue color similar to the screenshot */
         }
         #csv-display {
-            width: 50%; /* Adjust width as necessary */
+            flex: 1;
             padding: 20px;
-            border: 1px solid #ccc; /* Just for visibility */
-            overflow: auto; /* Adds scrollbar if needed */
-            height: 90vh; /* Adjust height based on view height */
+            border-left: 1px solid #ccc; /* Separator for visual distinction */
+            overflow: auto;
+            height: 60vh;
+            background-color: #fff; /* White background for the display area */
         }
-        #controls {
-            width: 45%; /* Adjust width as necessary */
+        #controls, #project {
+            width: 50%;
             padding: 20px;
+            color: #ffffff; /* White text color */
+        }
+        #serial-interface {
+            width: 100%;
+            padding: 20px;
+            border-top: 1px solid #ccc;
+            background-color: #343444; /* A darker shade of blue for the bottom area */
+            color: #ffffff; /* White text for visibility */
+        }
+        button {
+            background-color: #06778f; /* Green color for buttons */
+            color: #ffffff; /* White text on buttons */
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
     </style>
     <link rel="stylesheet" href="https://unpkg.com/leopard@^1/dist/index.min.css" />
 </head>
 <body>
-    <div id="controls">
-        <button id="greenFlag">Start position</button>
-        <button id="connect">Connect Serial</button>
-        <button id="myButton">Simulate</button>
-        <button id="download-btn">Download CSV</button>
-        <div id="project"></div>
+    <div class="top-container">
+        <div id="controls">
+            <button id="greenFlag">Start position</button>
+            <button id="connect">Connect Serial</button>
+            <button id="myButton">Simulate</button>
+            <button id="download-btn">Download CSV</button>
+            <div id="project"></div>
+        </div>
+
+        <pre id="csv-display"></pre> <!-- Area to display CSV data -->
     </div>
 
-    <pre id="csv-display"></pre> <!-- Area to display CSV data -->
+    <div id="serial-interface">
+        <h2>Send to Leaphy</h2>
+       
+        <input type="text" id="messageToSend" placeholder="Enter message to send">
+        <button id="send">Send Message</button>
+    </div>
+
+    <!-- Link to External JavaScript File -->
+    <script src="serial-connection.js"></script>
 
     <script type="module">
         import project from "./index.js";
@@ -48,7 +96,7 @@
         // Function to display CSV data
         async function displayCSVData() {
             const displayArea = document.getElementById('csv-display');
-            displayArea.textContent = await csvFileData(); // Assuming csvFileData() returns a Promise that resolves to CSV data
+            displayArea.textContent = await csvFileData; // Assuming csvFileData() returns a Promise that resolves to CSV data
         }
 
         displayCSVData();
