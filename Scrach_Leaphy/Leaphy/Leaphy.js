@@ -23,18 +23,14 @@ export default class Leaphy extends Sprite {
       new Trigger(Trigger.GREEN_FLAG, this.whenGreenFlagClicked),
     ];
   }
-
   interpretSerialCommands(text) {
     if (text.includes('996189468')) {
-
-    
       if (text.includes('Forward')) this.move(5);
       if (text.includes('stop')) this.move(0);
       if (text.includes('Right')) this.direction -= 10;
       if (text.includes('Left')) this.direction += 10;
     }
   }
-
 
   *whenGreenFlagClicked() {
     registerListener(this);
@@ -46,9 +42,6 @@ export default class Leaphy extends Sprite {
     document.getElementById("myButton").addEventListener("click", () => {
      button = !button;
     });
-
-
-
 
 //  simulation of the leaphy
     while (true) {

@@ -3,6 +3,7 @@
 <head>
     <title>Leaphy Digital Twin</title>
     <style>
+        /* Global styles */
         body {
             margin: 0;
             padding: 0;
@@ -12,10 +13,14 @@
             color: #333; /* Dark grey text color for readability */
             font-family: Arial, sans-serif; /* Setting a clean, modern font */
         }
+
+        /* Top container styles */
         .top-container {
             display: flex;
             background-color: #e8e2e2; /* Blue color similar to the screenshot */
         }
+
+        /* CSV display area styles */
         #csv-display {
             flex: 1;
             padding: 20px;
@@ -24,18 +29,25 @@
             height: 60vh;
             background-color: #fff; /* White background for the display area */
         }
+
+        /* Control panel styles */
         #controls, #project {
             width: 50%;
             padding: 20px;
             color: #ffffff; /* White text color */
         }
+
+        /* Serial interface styles */
         #serial-interface {
             width: 100%;
             padding: 20px;
             border-top: 1px solid #ccc;
             background-color: #343444; /* A darker shade of blue for the bottom area */
             color: #ffffff; /* White text for visibility */
+            display: flex;
         }
+
+        /* Button styles */
         button {
             background-color: #06778f; /* Green color for buttons */
             color: #ffffff; /* White text on buttons */
@@ -45,10 +57,13 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #218838; /* Darker green on hover */
         }
-        input[type="text"] {
+
+        /* Input field styles */
+        input[type="text"], input[type="number"] {
             padding: 10px;
             margin: 5px;
             border-radius: 5px;
@@ -60,22 +75,35 @@
 <body>
     <div class="top-container">
         <div id="controls">
+            <!-- Control buttons -->
             <button id="greenFlag">Start position</button>
             <button id="connect">Connect Serial</button>
             <button id="myButton">Simulate</button>
             <button id="download-btn">Download CSV</button>
+            <!-- Project area -->
             <div id="project"></div>
         </div>
-
-        <pre id="csv-display"></pre> <!-- Area to display CSV data -->
+        <!-- CSV display area -->
+        <pre id="csv-display"></pre>
     </div>
 
-    <div id="serial-interface">
-        <h2>Send to Leaphy</h2>
-       
-        <input type="text" id="messageToSend" placeholder="Enter message to send">
-        <button id="send">Send Message</button>
+    <!-- Serial interface -->
+    <div id="serial-interface" style="display: flex; justify-content: flex-start; padding: 10px;">
+        <!-- Left side -->
+        <div>
+            <h2>Send to Leaphy</h2>
+            <input type="text" id="messageToSend" placeholder="Enter message to send">
+            <button id="send">Send Message</button>
+        </div>
+        <!-- Right side -->
+        <div>
+            <h2>Amount of Leaphys</h2>
+            <input type="number" id="numLeaphys" min="1" max="10" value="1">
+            <button id="showButton">Show Leaphys</button>
+        </div>
     </div>
+
+
 
     <!-- Link to External JavaScript File -->
     <script src="serial-connection.js"></script>

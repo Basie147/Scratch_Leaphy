@@ -19,8 +19,8 @@ const stage = new Stage({ costumeNumber: 1 });
 
 const sprites = {
   Leaphy: new Leaphy({
-    x: 150.06805127260301,
-    y: 157.70766658549076,
+    x: 140,
+    y: -150,
     direction: -110,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
     costumeNumber: 1,
@@ -29,8 +29,8 @@ const sprites = {
     layerOrder: 10,
   }),
   Leaphy2: new Leaphy2({
-    x: 196.75649440356023,
-    y: -45.52265582079654,
+    x: 100,
+    y: -150,
     direction: -30,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
     costumeNumber: 1,
@@ -38,92 +38,112 @@ const sprites = {
     visible: true,
     layerOrder: 9,
   }),
-  // Leaphy3: new Leaphy3({
-  //   x: 208.85050432951584,
-  //   y: -72.65811533170509,
-  //   direction: -10,
-  //   rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-  //   costumeNumber: 1,
-  //   size: 10,
-  //   visible: true,
-  //   layerOrder: 8,
-  // }),
-  // Leaphy4: new Leaphy4({
-  //   x: 211.2815788168529,
-  //   y: -102.38465488592479,
-  //   direction: 10,
-  //   rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-  //   costumeNumber: 1,
-  //   size: 10,
-  //   visible: true,
-  //   layerOrder: 7,
-  // }),
-  // Leaphy5: new Leaphy5({
-  //   x: 202.73571018559142,
-  //   y: -132.97222226314128,
-  //   direction: 30,
-  //   rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-  //   costumeNumber: 1,
-  //   size: 10,
-  //   visible: true,
-  //   layerOrder: 6,
-  // }),
-  // Leaphy6: new Leaphy6({
-  //   x: 178,
-  //   y: -150,
-  //   direction: 90,
-  //   rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-  //   costumeNumber: 1,
-  //   size: 10,
-  //   visible: true,
-  //   layerOrder: 5,
-  // }),
-  // Leaphy7: new Leaphy7({
-  //   x: 148,
-  //   y: -150,
-  //   direction: 90,
-  //   rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-  //   costumeNumber: 1,
-  //   size: 10,
-  //   visible: true,
-  //   layerOrder: 4,
-  // }),
-  // Leaphy8: new Leaphy8({
-  //   x: 118,
-  //   y: -150,
-  //   direction: 90,
-  //   rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-  //   costumeNumber: 1,
-  //   size: 10,
-  //   visible: true,
-  //   layerOrder: 3,
-  // }),
-  // Leaphy9: new Leaphy9({
-  //   x: 88,
-  //   y: -150,
-  //   direction: 90,
-  //   rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-  //   costumeNumber: 1,
-  //   size: 10,
-  //   visible: true,
-  //   layerOrder: 2,
-  // }),
-  // Leaphy10: new Leaphy10({
-  //   x: 56.70082444734717,
-  //   y: -151.79947569070373,
-  //   direction: 90,
-  //   rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-  //   costumeNumber: 1,
-  //   size: 10,
-  //   visible: true,
-  //   layerOrder: 1,
-  // }),
+
+ 
+  Leaphy3: new Leaphy3({
+    x: 60,
+    y: -150,
+    direction: -10,
+    rotationStyle: Sprite.RotationStyle.ALL_AROUND,
+    costumeNumber: 1,
+    size: 10,
+    visible: true,
+    layerOrder: 8,
+  }),
+  Leaphy4: new Leaphy4({
+    x: 20,
+    y: -150,
+    direction: 10,
+    rotationStyle: Sprite.RotationStyle.ALL_AROUND,
+    costumeNumber: 1,
+    size: 10,
+    visible: true,
+    layerOrder: 7,
+  }),
+  Leaphy5: new Leaphy5({
+    x: -20,
+    y: -150,
+    direction: 30,
+    rotationStyle: Sprite.RotationStyle.ALL_AROUND,
+    costumeNumber: 1,
+    size: 10,
+    visible: true,
+    layerOrder: 6,
+  }),
+  Leaphy6: new Leaphy6({
+    x: -60,
+    y: -150,
+    direction: 90,
+    rotationStyle: Sprite.RotationStyle.ALL_AROUND,
+    costumeNumber: 1,
+    size: 10,
+    visible: true,
+    layerOrder: 5,
+  }),
+  Leaphy7: new Leaphy7({
+    x: -100,
+    y: -150,
+    direction: 90,
+    rotationStyle: Sprite.RotationStyle.ALL_AROUND,
+    costumeNumber: 1,
+    size: 10,
+    visible: true,
+    layerOrder: 4,
+  }),
+  Leaphy8: new Leaphy8({
+    x: -140,
+    y: -150,
+    direction: 90,
+    rotationStyle: Sprite.RotationStyle.ALL_AROUND,
+    costumeNumber: 1,
+    size: 10,
+    visible: true,
+    layerOrder: 3,
+  }),
+  Leaphy9: new Leaphy9({
+    x: 88,
+    y: -150,
+    direction: 90,
+    rotationStyle: Sprite.RotationStyle.ALL_AROUND,
+    costumeNumber: 1,
+    size: 10,
+    visible: true,
+    layerOrder: 2,
+  }),
+  Leaphy10: new Leaphy10({
+    x: -180,
+    y: -150,
+    direction: 90,
+    rotationStyle: Sprite.RotationStyle.ALL_AROUND,
+    costumeNumber: 1,
+    size: 10,
+    visible: true,
+    layerOrder: 1,
+  }),
+
+  // Add additional Leaphy sprites here with their properties
 };
+const project = new Project(stage, sprites, { frameRate: 30 });
 
-const project = new Project(stage, sprites, {
-  frameRate: 30, // Set to 60 to make your project run faster
+function showLeaphys() {
+  const num = parseInt(document.getElementById('numLeaphys').value, 10);
+  console.log(`Attempting to show ${num} Leaphys.`);
+  Object.keys(sprites).forEach((name, index) => {
+    const shouldBeVisible = index + 1 <= num;
+    sprites[name].visible = shouldBeVisible;
+    console.log(`${name} set to visible: ${shouldBeVisible}`);
+  });
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const showButton = document.getElementById('showButton');
+  if (showButton) {
+    showButton.addEventListener('click', showLeaphys);
+  } else {
+    console.log('Failed to find showButton to attach event.');
+  }
 });
-
 
 
 export default project;
