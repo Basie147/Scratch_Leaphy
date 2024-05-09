@@ -27,7 +27,7 @@ jobs:
           file: Dockerfile
           context: .
           push: true
-          tags: ghcr.io/Basie147/Scratch_Leaphy:test
+          tags: ghcr.io/basie147/scratch_leaphy:test
 
       - name: Redeploy TEST
         if: github.ref_type == 'branch'
@@ -37,7 +37,7 @@ jobs:
       - name: Clean up old images
         uses: actions/delete-package-versions@v5
         with:
-          package-name: "Basie147/Scratch_Leaphy"
+          package-name: "basie147/scratch_leaphy"
           package-type: "container"
           min-versions-to-keep: 5
           delete-only-untagged-versions: "true"
