@@ -1,3 +1,3 @@
 FROM nginx
 
-COPY Scrach_Leaphy /usr/share/nginx/html
+COPY scratch_leaphy /usr/share/nginx/html
