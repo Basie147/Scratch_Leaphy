@@ -60,10 +60,12 @@ export default class Leaphy extends Sprite {
       if (template === "2") {
       this.costumes = [new Costume("Leaphy", "./costumes/forklift.png", { x: 273, y: 258 })];
       }
+      if (template === "5") {
+        this.costumes = [new Costume("Leaphy", "./costumes/Bus.png", { x: 273, y: 258 })];
+      }
+      
       else this.costumes = [new Costume("Leaphy", "./costumes/Leaphy.png", { x: 273, y: 258 })];
     });
-
-  
     while (true) {
       if (this.button) {
         const yellow = Color.rgb(255, 247, 0);
@@ -74,9 +76,6 @@ export default class Leaphy extends Sprite {
         const black = Color.rgb(0, 0, 0);
         const pink = Color.rgb(249, 0, 255);
         const lightGreen = Color.rgb(122, 182, 73);
-
-   
-   
 
         if (this.colorTouching(yellow, red)) { // Yellow touching red
      

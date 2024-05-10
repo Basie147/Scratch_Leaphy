@@ -58,12 +58,12 @@ export default class Leaphy3 extends Sprite {
       if (template === "2") {
       this.costumes = [new Costume("Leaphy", "./costumes/forklift.png", { x: 273, y: 258 })];
       }
+      if (template === "5") {
+        this.costumes = [new Costume("Leaphy", "./costumes/Bus.png", { x: 273, y: 258 })];
+      }
+      
       else this.costumes = [new Costume("Leaphy", "./costumes/Leaphy.png", { x: 273, y: 258 })];
     });
-
-    
-
-  
     while (true) {
       if (this.button) {
         const yellow = Color.rgb(255, 247, 0);

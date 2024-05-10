@@ -30,8 +30,10 @@ export default class Stage extends StageBase {
       if (template === "2") {
         xCoordinate = 240; // Change x to 200 if template is "2"
         yCoordinate = 180; // Change y to 150 if template is "2"
-  
-       
+      }
+      if (template === "5") {
+        xCoordinate = 240; // Change x to 200 if template is "2"
+        yCoordinate = 180; // Change y to 150 if template is "2"
       }
       this.costumes = [
         new Costume(`backdrop${template}`, `./Stage/costumes/backdrop${template}.svg`, {
