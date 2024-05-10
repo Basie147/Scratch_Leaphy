@@ -13,14 +13,12 @@ const ypos = -150;
 export default class Leaphy2 extends Sprite {
   constructor(...args) {
     super(...args);
-    this.costumes = [new Costume("Leaphy", "./Leaphy2/costumes/Leaphy.png", { x: 273, y: 258 })];
+    this.costumes = [new Costume("Leaphy", "./costumes/Leaphy.png", { x: 273, y: 258 }) ];
     this.triggers = [new Trigger(Trigger.GREEN_FLAG, this.whenGreenFlagClicked)];
     this.speed = 2.0; // Define speed as a class property
     this.turnDegree = 10; // Define turnDegree as a class property
     this.button = false; // initialize as a class property
     this.frame = 1/30; // Define frame as a class property
- 
-    
   }
 
   // Interpret serial commands
@@ -56,7 +54,13 @@ export default class Leaphy2 extends Sprite {
       this.frame = parseInt(document.getElementById("framerate").value);
       this.frame = 1 / this.frame;
     });
-    
+    document.getElementById("templateButton").addEventListener("click", () => {
+      const template = document.getElementById("template").value;
+      if (template === "2") {
+      this.costumes = [new Costume("Leaphy", "./costumes/forklift.png", { x: 273, y: 258 })];
+      }
+      else this.costumes = [new Costume("Leaphy", "./costumes/Leaphy.png", { x: 273, y: 258 })];
+    });
 
   
     while (true) {
