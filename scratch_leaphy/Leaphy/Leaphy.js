@@ -73,7 +73,10 @@ export default class Leaphy extends Sprite {
         const purple = Color.rgb(153, 102, 255);
         const black = Color.rgb(0, 0, 0);
         const pink = Color.rgb(249, 0, 255);
-        const lightGreen = Color.rgb(119, 180, 68);
+        const lightGreen = Color.rgb(122, 182, 73);
+
+   
+   
 
         if (this.colorTouching(yellow, red)) { // Yellow touching red
      

@@ -9,9 +9,6 @@ import {
   Sound,
 } from "https://unpkg.com/leopard@^1/dist/index.esm.js";
 
-// import Leaphy from "../Leaphy/Leaphy";
-
-
 export default class Stage extends StageBase {
   constructor(...args) {
     super(...args);
@@ -33,6 +30,7 @@ export default class Stage extends StageBase {
       if (template === "2") {
         xCoordinate = 240; // Change x to 200 if template is "2"
         yCoordinate = 180; // Change y to 150 if template is "2"
+  
        
       }
       this.costumes = [
