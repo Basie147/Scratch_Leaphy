@@ -5,7 +5,10 @@ import { csvFileData } from '../Lib/csv.js';
 
 // Define the constant
 const LEAPHYNUMBER = '2';
-const COMMAND_NUMBER = '996236176';
+
+let COMMAND_NUMBER = '999999999';
+document.getElementById("node-id_" + LEAPHYNUMBER).addEventListener('click', function() {
+  COMMAND_NUMBER = document.getElementById("Leaphy-id_1").value;});
 
 const xpos = 220 - LEAPHYNUMBER * 40;
 const ypos = -150;

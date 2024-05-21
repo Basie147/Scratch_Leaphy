@@ -31,10 +31,10 @@
         }
 
         /* Control panel styles */
-        #controls, #project {
-            width: 50%;
+        #controls, #project, #node-id-container {
+            width: 33%; /* Adjusted width to fit three sections */
             padding: 1px;
-            margin: 10px;
+            margin: 1px;
             color: #ffffff; /* White text color */
         }
 
@@ -87,7 +87,43 @@
         <!-- CSV display area -->
         
         <pre id="csv-display"></pre>
+
+        <!-- Node ID section -->
+        <div id="node-id-container">
+            <input type="number" id="Leaphy-id_1" value="996236176" min="100000000">
+            <button id="node-id_1">Set Leaphy ID 1</button>
+            <br>
+            <input type="number" id="Leaphy-id_2" value="996189469" min="100000000">
+            <button id="node-id_2">Set Leaphy ID 2</button>
+            <br>
+            <input type="number" id="Leaphy-id_3" value="996189470" min="100000000">
+            <button id="node-id_3">Set Leaphy ID 3</button>
+            <br>
+            <input type="number" id="Leaphy-id_4" value="996189471" min="100000000">
+            <button id="node-id_4">Set Leaphy ID 4</button>
+            <br>
+            <input type="number" id="Leaphy-id_5" value="996189472" min="100000000">
+            <button id="node-id_5">Set Leaphy ID 5</button>
+            <br>
+            <input type="number" id="Leaphy-id_6" value="996189473" min="100000000">
+            <button id="node-id_6">Set Leaphy ID 6</button>
+            <br>
+            <input type="number" id="Leaphy-id_7" value="996189474" min="100000000">
+            <button id="node-id_7">Set Leaphy ID 7</button>
+            <br>
+            <input type="number" id="Leaphy-id_8" value="996189475" min="100000000">
+            <button id="node-id_8">Set Leaphy ID 8</button>
+            <br>
+            <input type="number" id="Leaphy-id_9" value="996189476" min="100000000">
+            <button id="node-id_9">Set Leaphy ID 9</button>
+            <br>
+            <input type="number" id="Leaphy-id_10" value="996189477" min="100000000">
+            <button id="node-id_10">Set Leaphy ID 10</button>
+        </div>
+
     </div>
+
+
 
     <!-- Serial interface -->
     <div id="serial-interface" style="display: flex; justify-content: flex-start; padding: 10px;">
@@ -100,12 +136,9 @@
             <input type="text" id="messageToSend" placeholder="Enter message to send">
             <button id="send">Send Message</button>
         </div>
-        
-        
-        
     </div>
 
-    <!-- simulte interface -->
+    <!-- Simulate interface -->
     <div id="serial-interface" style="display: flex; justify-content: flex-start; padding: 10px;">
         <!-- Left side -->
         <div>
@@ -114,7 +147,6 @@
             <button id="speedButton">Set Speed</button>
         </div>
         
-        
         <!-- Right side -->
         <div>
             <h2>Turn Degree: <span id="turnValue">10</span></h2>
@@ -122,13 +154,14 @@
             <button id="turnButton">Set Turn Degree</button>
         </div>
         
-          <!-- Right side -->
+        <!-- Right side -->
         <div>
             <h2>Amount Leaphys</h2>
             <input type="number" id="numLeaphys" min="1" max="10" value="10">
             <button id="showButton">Show Leaphys</button>
         </div>
 
+        <!-- Right side -->
         <div>
             <h2>Change template</h2>
             <input type="number" id="template" min="1" max="3" value="1">
@@ -140,22 +173,8 @@
             <input type="number" id="framerate" min="1" max="30" value="30">
             <button id="framerateButton">Change Framerate</button>
         </div>
-
     </div>
 
-    <script>
-        document.querySelectorAll('input[type="range"]').forEach(input => {
-            const span = document.getElementById(input.id.replace("Input", "Value"));
-            input.addEventListener('input', () => span.textContent = input.value);
-        });
-    </script>
-
-
-
-
-
-    <!-- Link to External JavaScript File
-    <script src="serial-connection.js"></script> -->
 
     <script type="module">
         import project from "./index.js";
