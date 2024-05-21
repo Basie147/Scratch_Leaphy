@@ -14,14 +14,12 @@ const ypos = -150;
 export default class Leaphy9 extends Sprite {
   constructor(...args) {
     super(...args);
-    this.costumes = [new Costume("Leaphy", "./Leaphy9/costumes/Leaphy.png", { x: 273, y: 258 })];
+    this.costumes = [new Costume("Leaphy", "./costumes/Leaphy.png", { x: 273, y: 258 }) ];
     this.triggers = [new Trigger(Trigger.GREEN_FLAG, this.whenGreenFlagClicked)];
     this.speed = 2.0; // Define speed as a class property
     this.turnDegree = 10; // Define turnDegree as a class property
     this.button = false; // initialize as a class property
     this.frame = 1/30; // Define frame as a class property
- 
-    
   }
 
   // Interpret serial commands
@@ -57,9 +55,16 @@ export default class Leaphy9 extends Sprite {
       this.frame = parseInt(document.getElementById("framerate").value);
       this.frame = 1 / this.frame;
     });
-    
-
-  
+    document.getElementById("templateButton").addEventListener("click", () => {
+      const template = document.getElementById("template").value;
+      if (template === "2") {
+      this.costumes = [new Costume("Leaphy", "./costumes/forklift.png", { x: 273, y: 258 })];
+      }
+      else if (template === "5") {
+        this.costumes = [new Costume("Leaphy", "./costumes/Bus.png", { x: 273, y: 258 })];
+      }
+      else  this.costumes = [new Costume("Leaphy", "./costumes/Leaphy.png", { x: 273, y: 258 })]
+    });
     while (true) {
       if (this.button) {
         const yellow = Color.rgb(255, 247, 0);
@@ -69,7 +74,7 @@ export default class Leaphy9 extends Sprite {
         const purple = Color.rgb(153, 102, 255);
         const black = Color.rgb(0, 0, 0);
         const pink = Color.rgb(249, 0, 255);
-        const lightGreen = Color.rgb(119, 180, 68);
+        const lightGreen = Color.rgb(122, 182, 73);
 
         if (this.colorTouching(yellow, red)) { // Yellow touching red
      
