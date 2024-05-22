@@ -5,7 +5,7 @@ import { csvFileData } from '../Lib/csv.js';
 // Define the constant
 const LEAPHYNUMBER = '3';
 
-let COMMAND_NUMBER = '999999999';
+let COMMAND_NUMBER = '995460516';
 document.getElementById("node-id_" + LEAPHYNUMBER).addEventListener('click', function() {
   COMMAND_NUMBER = document.getElementById("Leaphy-id_1").value;});
 
