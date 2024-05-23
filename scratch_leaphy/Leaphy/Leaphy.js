@@ -16,6 +16,7 @@ document.getElementById("node-id_" + LEAPHYNUMBER).addEventListener('click', fun
 const xpos = 220 - LEAPHYNUMBER * 40;
 const ypos = -150;
 
+
 export default class Leaphy extends Sprite {
   constructor(...args) {
     super(...args);
