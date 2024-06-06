@@ -27,15 +27,16 @@ export default class Leaphy extends Sprite {
 
   // Interpret serial commands
   interpretSerialCommands = (text) => {
-  const values = text.split(',');
-    if (values.length >= 2) {
-      const en_Left = parseFloat(values[0]);
-      this.goto(data[en_Left][0],data[en_Left][1]);
-      this.direction = data[en_Left][2];
-      console.log(en_Left);
+    if (text.includes(COMMAND_NUMBER )) {
+    const values = text.split(',');
+      if (values.length >= 2) {
+        const en_Left = parseFloat(values[0]);
+        this.goto(data[en_Left][0],data[en_Left][1]);
+        this.direction = data[en_Left][2];
+        console.log(en_Left);
+      }
     }
   };
-
   *whenGreenFlagClicked() {
     // Setup event listeners
     registerListener(this);
