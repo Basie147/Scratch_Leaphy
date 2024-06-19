@@ -8,7 +8,6 @@ import { csvFileData } from '../Lib/csv.js';
 const LEAPHYNUMBER = '1';
 let COMMAND_NUMBER = '996190084';
 
-
 document.getElementById("node-id_" + LEAPHYNUMBER).addEventListener('click', function() {
 COMMAND_NUMBER = document.getElementById(`Leaphy-id_${LEAPHYNUMBER}`).value;});
 
@@ -68,7 +67,7 @@ export default class Leaphy extends Sprite {
       const template = document.getElementById("template").value;
       if (template === "2") {
         this.costumes = [new Costume("Leaphy", "./costumes/forklift.png" )];
-        this.goto(120, -140);
+        this.goto(200-(40*LEAPHYNUMBER), -140);
         this.direction = 90;
       }
       else if (template === "5") {
