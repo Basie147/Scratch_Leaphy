@@ -73,8 +73,8 @@ async function handleSerialData() {
 }
 
 function processMessage(msg) {
-  // console.log(msg);
-  // csvFileData.push([msg]);
+  console.log(msg);
+  csvFileData.push([msg]);
   broadcastData(msg);
 }
 

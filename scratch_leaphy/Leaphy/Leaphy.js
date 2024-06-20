@@ -8,13 +8,16 @@ import { csvFileData } from '../Lib/csv.js';
 const LEAPHYNUMBER = '1';
 let COMMAND_NUMBER = '996190084';
 
-document.getElementById("node-id_" + LEAPHYNUMBER).addEventListener('click', function() {
-COMMAND_NUMBER = document.getElementById(`Leaphy-id_${LEAPHYNUMBER}`).value;});
+const LOCATIONS = 46
+let start = false
 
-import { data } from '../Stage/Stage.js';
-const xpos =  data[58-LEAPHYNUMBER][0]; //- left + right
-const ypos = data[58- LEAPHYNUMBER][1] // + up - down
-const dir = data[58- LEAPHYNUMBER][2] // + up - down
+document.getElementById("node-id_" + LEAPHYNUMBER).addEventListener('click', function() {
+  COMMAND_NUMBER = document.getElementById(`Leaphy-id_${LEAPHYNUMBER}`).value;});
+  
+  import { data } from '../Stage/Stage.js';
+  const xpos =  data[LOCATIONS-LEAPHYNUMBER][0]; //- left + right
+  const ypos = data[LOCATIONS- LEAPHYNUMBER][1] // + up - down
+  const dir = data[LOCATIONS- LEAPHYNUMBER][2] // + up - down
 
 export default class Leaphy extends Sprite {
   constructor(...args) {
@@ -33,9 +36,16 @@ export default class Leaphy extends Sprite {
     const values = text.split(',');
       if (values.length >= 2) {
         const en_Left = parseFloat(values[0]);
+        if (en_Left == 0) {start = true}
+        
+        if (start == true && en_Left < 43) { // Start after the first command and en_left = lower then 47
+
+
         this.goto(data[en_Left][0],data[en_Left][1]);
         this.direction = data[en_Left][2];
-        console.log(en_Left);
+        console.log(data[en_Left][0],data[en_Left][1],data[en_Left][2]);
+  
+        }
       }
     }
   };

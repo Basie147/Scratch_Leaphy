@@ -6,15 +6,16 @@ import { csvFileData } from '../Lib/csv.js';
 // Define the constant
 const LEAPHYNUMBER = '2';
 let COMMAND_NUMBER = '996190092';
+const LOCATIONS = 42
+let start = false
 
 document.getElementById("node-id_" + LEAPHYNUMBER).addEventListener('click', function() {
   COMMAND_NUMBER = document.getElementById(`Leaphy-id_${LEAPHYNUMBER}`).value;});
   
   import { data } from '../Stage/Stage.js';
-  const xpos =  data[58-LEAPHYNUMBER][0]; //- left + right
-  const ypos = data[58- LEAPHYNUMBER][1] // + up - down
-  const dir = data[58- LEAPHYNUMBER][2] // + up - down
-  
+  const xpos =  data[LOCATIONS-LEAPHYNUMBER][0]; //- left + right
+  const ypos = data[LOCATIONS- LEAPHYNUMBER][1] // + up - down
+  const dir = data[LOCATIONS- LEAPHYNUMBER][2] // + up - down
   export default class Leaphy extends Sprite {
     constructor(...args) {
       super(...args);
@@ -26,18 +27,22 @@ document.getElementById("node-id_" + LEAPHYNUMBER).addEventListener('click', fun
       this.frame = 1/30; // Define frame as a class property
     }
   
-    // Interpret serial commands
-    interpretSerialCommands = (text) => {
-      if (text.includes(COMMAND_NUMBER )) {
-      const values = text.split(',');
-        if (values.length >= 2) {
-          const en_Left = parseFloat(values[0]);
-          this.goto(data[en_Left][0],data[en_Left][1]);
-          this.direction = data[en_Left][2];
-          console.log(en_Left);
+  // Interpret serial commands
+  interpretSerialCommands = (text) => {
+    if (text.includes(COMMAND_NUMBER )) {
+    const values = text.split(',');
+      if (values.length >= 2) {
+        const en_Left = parseFloat(values[0]);
+        if (en_Left == 0) {start = true}
+        if (start == true && en_Left < 43) { // Start after the first command and en_left = lower then 47
+          
+        this.goto(data[en_Left][0],data[en_Left][1]);
+        this.direction = data[en_Left][2];
+  
         }
       }
-    };
+    }
+  };
   
     *whenGreenFlagClicked() {
       // Setup event listeners
