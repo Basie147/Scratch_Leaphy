@@ -34,10 +34,10 @@ jobs:
         run: |
           curl https://admin.leaphyeasybloqs.com/hooks/update-docker-image?stack=leaphy-webbased-digitaltwin -H "X-Token: ${{ secrets.WEBHOOK_TOKEN }}"
 
-      - name: Clean up old images
-        uses: actions/delete-package-versions@v5
-        with:
-          package-name: "basie147/scratch_leaphy"
-          package-type: "container"
-          min-versions-to-keep: 5
-          delete-only-untagged-versions: "true"
+      # - name: Clean up old images
+      #   uses: actions/delete-package-versions@v5
+      #   with:
+      #     package-name: "basie147/scratch_leaphy"
+      #     package-type: "container"
+      #     min-versions-to-keep: 5
+      #     delete-only-untagged-versions: "true"
