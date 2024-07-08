@@ -5,15 +5,15 @@ import {
 
 import Stage from "./Stage/Stage.js";
 import Leaphy from "./Leaphy/Leaphy.js";
-import Leaphy2 from "./Leaphy2/Leaphy2.js";
-import Leaphy3 from "./Leaphy3/Leaphy3.js";
-import Leaphy4 from "./Leaphy4/Leaphy4.js";
-import Leaphy5 from "./Leaphy5/Leaphy5.js";
-import Leaphy6 from "./Leaphy6/Leaphy6.js";
-import Leaphy7 from "./Leaphy7/Leaphy7.js";
-import Leaphy8 from "./Leaphy8/Leaphy8.js";
-import Leaphy9 from "./Leaphy9/Leaphy9.js";
-import Leaphy10 from "./Leaphy10/Leaphy10.js";
+import Leaphy2 from "./Leaphy/Leaphy2.js";
+import Leaphy3 from "./Leaphy/Leaphy3.js";
+import Leaphy4 from "./Leaphy/Leaphy4.js";
+import Leaphy5 from "./Leaphy/Leaphy5.js";
+import Leaphy6 from "./Leaphy/Leaphy6.js";
+import Leaphy7 from "./Leaphy/Leaphy7.js";
+import Leaphy8 from "./Leaphy/Leaphy8.js";
+import Leaphy9 from "./Leaphy/Leaphy9.js";
+import Leaphy10 from "./Leaphy/Leaphy10.js";
 
 const stage = new Stage({ costumeNumber: 1 });
 
