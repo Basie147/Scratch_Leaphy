@@ -25,6 +25,7 @@ const int RedPinTop = 14;
 const int stopControlPin = 16;
 const int speed = 200;
 
+
 // Pin definitions for encoders
 const int encoderLeftPin = 23;
 // const int encoderRightPin = 24;
