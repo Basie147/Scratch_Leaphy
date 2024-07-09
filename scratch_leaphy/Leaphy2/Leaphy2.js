@@ -18,6 +18,7 @@ document.getElementById("node-id_" + LEAPHYNUMBER).addEventListener('click', fun
   const dir = data[LOCATIONS- LEAPHYNUMBER][2] // + up - down
   export default class Leaphy extends Sprite {
     constructor(...args) {
+      
       super(...args);
       this.costumes = [new Costume(`Leaphy`, `./costumes/Leaphy_${LEAPHYNUMBER}.png`, { x: 273, y: 258 })];
       this.triggers = [new Trigger(Trigger.GREEN_FLAG, this.whenGreenFlagClicked)];
