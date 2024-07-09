@@ -12,12 +12,13 @@ const ypos = -150;
 const yellow = Color.rgb(255, 247, 0);
 const red = Color.rgb(255, 0, 0);
 const green = Color.rgb(0, 255, 21);
-const blue = Color.rgb(0, 94, 255);
+const blue = Color.rgb(0, 94, 255); 
 const purple = Color.rgb(153, 102, 255);
 const black = Color.rgb(0, 0, 0);
 const pink = Color.rgb(249, 0, 255);
 const lightGreen = Color.rgb(122, 182, 73);
 const lightblue = Color.rgb(0, 255, 232);
+
 
 // Event listener for the node-id_1 button
 document.getElementById("node-id_" + LEAPHYNUMBER).addEventListener('click', function() { // Event listener for the node-id_1 button
