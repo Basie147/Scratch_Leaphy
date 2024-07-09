@@ -1,12 +1,12 @@
-import { Sprite, Trigger, Costume, Color } from "https://unpkg.com/leopard@^1/dist/index.esm.js"; // import index from the leopard package
-import { connectToSerial, registerListener } from '../Lib/serialFunctions.js'; // import functions from the serialFunctions.js file
-import { csvFileData } from '../Lib/csv.js'; // import the csvFileData from the csv.js file
+import { Sprite, Trigger, Costume, Color } from "https://unpkg.com/leopard@^1/dist/index.esm.js";
+import { connectToSerial, registerListener } from '../Lib/serialFunctions.js';
+import { csvFileData } from '../Lib/csv.js';
 
-// Constants
-const LEAPHYNUMBER = '1'; // Leaphy number
-const COMMAND_NUMBER = '996190084'; // Node-Identifier
-const xpos = 220 - LEAPHYNUMBER * 40; // start x position
-const ypos = -150; // start y position
+// Define the constant
+const LEAPHYNUMBER = '10';
+const COMMAND_NUMBER = '999999999';
+const xpos = 220 - LEAPHYNUMBER * 40;
+const ypos = -150;
 
 // Define colors
 const yellow = Color.rgb(255, 247, 0);
