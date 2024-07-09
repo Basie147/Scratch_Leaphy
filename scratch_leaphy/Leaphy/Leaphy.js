@@ -8,6 +8,17 @@ const COMMAND_NUMBER = '996190084'; // Node-Identifier
 const xpos = 220 - LEAPHYNUMBER * 40; // start x position
 const ypos = -150; // start y position
 
+// Define colors
+const yellow = Color.rgb(255, 247, 0);
+const red = Color.rgb(255, 0, 0);
+const green = Color.rgb(0, 255, 21);
+const blue = Color.rgb(0, 94, 255);
+const purple = Color.rgb(153, 102, 255);
+const black = Color.rgb(0, 0, 0);
+const pink = Color.rgb(249, 0, 255);
+const lightGreen = Color.rgb(122, 182, 73);
+const lightblue = Color.rgb(0, 255, 232);
+
 // Event listener for the node-id_1 button
 document.getElementById("node-id_" + LEAPHYNUMBER).addEventListener('click', function() { // Event listener for the node-id_1 button
   COMMAND_NUMBER = document.getElementById("Leaphy-id_1").value;}); // Set the command number to the value of the input field
@@ -76,16 +87,7 @@ export default class Leaphy extends Sprite {
     // The scratch color simulation
     while (true) {
       if (this.button) {
-        // Define colors
-        const yellow = Color.rgb(255, 247, 0);
-        const red = Color.rgb(255, 0, 0);
-        const green = Color.rgb(0, 255, 21);
-        const blue = Color.rgb(0, 94, 255);
-        const purple = Color.rgb(153, 102, 255);
-        const black = Color.rgb(0, 0, 0);
-        const pink = Color.rgb(249, 0, 255);
-        const lightGreen = Color.rgb(122, 182, 73);
-        
+
         // Check if yellow color sensor is touching RGB
         if (this.colorTouching(yellow, red)) { // Yellow touching red
      
@@ -110,7 +112,7 @@ export default class Leaphy extends Sprite {
         if (this.colorTouching(purple, black)) { // Purple touching black
           this.direction -= this.turnDegree; // Turn left
         }
-        if (this.colorTouching(Color.rgb(0, 255, 232), black)) { // Blue touching black
+        if (this.colorTouching(lightblue, black)) { // Blue touching black
           this.direction += this.turnDegree; // Turn right
         }
         if (this.colorTouching(pink, lightGreen)) {  // Pink touching light green
