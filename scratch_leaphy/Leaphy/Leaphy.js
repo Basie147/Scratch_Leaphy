@@ -8,7 +8,7 @@ import { csvFileData } from '../Lib/csv.js';
 const LEAPHYNUMBER = '1';
 let COMMAND_NUMBER = '996190084';
 
-const LOCATIONS = 46
+const LOCATIONS = 42
 let start = false
 
 document.getElementById("node-id_" + LEAPHYNUMBER).addEventListener('click', function() {
