@@ -1,13 +1,10 @@
+const LEAPHYNUMBER = '1'; // Define the Leaphy number
+const COMMAND_NUMBER = '996190084'; // Define the Node ID from the ESP32
+
 import { Sprite, Trigger, Costume, Color } from "https://unpkg.com/leopard@^1/dist/index.esm.js";
 import { connectToSerial, registerListener } from '../Lib/serialFunctions.js';
 import { csvFileData } from '../Lib/csv.js';
 import { data } from '../Stage/Stage.js';
-
-
-// Define the constant
-const LEAPHYNUMBER = '1'; // Define the Leaphy number
-const COMMAND_NUMBER = '996190084'; // Define the Node ID from the ESP32
-const LOCATIONS = 42 // The amount of spawn locations
 
 // Define the colors codes for simulation
 const yellow = Color.rgb(255, 247, 0);
@@ -21,6 +18,7 @@ const lightGreen = Color.rgb(122, 182, 73);
 const lightBlue = Color.rgb(0, 255, 232); 
 
 // Start postion from the location array (stage.js)
+const LOCATIONS = 42 // The amount of spawn locations
 const xpos =  data[LOCATIONS-LEAPHYNUMBER][0]; // X start position
 const ypos = data[LOCATIONS- LEAPHYNUMBER][1] // y start position
 const dir = data[LOCATIONS- LEAPHYNUMBER][2] // point of direction start position
