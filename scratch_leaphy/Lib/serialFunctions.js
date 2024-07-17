@@ -1,6 +1,9 @@
+import { csvFileData } from '../Lib/csv.js';
+
 let listeners = [];
 let port = null;
 let reader = null;
+let buffer = ""; // Buffer to accumulate incoming data
 
 // Function to toggle serial connection
 async function toggleSerialConnection() {
@@ -52,9 +55,14 @@ async function handleSerialData() {
         console.log("Serial reader has been closed, no more data.");
         break;
       }
-      const receivedText = textDecoder.decode(value);
-      console.log('Received:', receivedText);
-      broadcastData(receivedText);
+      buffer += textDecoder.decode(value, { stream: true });
+
+      let newlineIndex;
+      while ((newlineIndex = buffer.indexOf('\n')) >= 0) {
+        const completeMessage = buffer.slice(0, newlineIndex + 1);
+        buffer = buffer.slice(newlineIndex + 1);
+        processMessage(completeMessage.trim()); // Process the complete message
+      }
     }
   } catch (error) {
     console.error('Error reading from serial port:', error);
@@ -64,18 +72,25 @@ async function handleSerialData() {
   }
 }
 
+function processMessage(msg) {
+  console.log(msg);
+  csvFileData.push([msg]);
+  broadcastData(msg);
+}
+
+// Add event listener to button
 document.getElementById("send").addEventListener('click', sendMessage);
 
 async function sendMessage() {
   const textEncoder = new TextEncoder();
-  const dataToSend = textEncoder.encode(document.getElementById('messageToSend').value);
+  const dataToSend = textEncoder.encode(document.getElementById('messageToSend').value + '\n'); // Add a newline character to the message
   if (port && port.writable) {
-      const writer = port.writable.getWriter();
-      await writer.write(dataToSend);
-      writer.releaseLock();
-      console.log("Message sent:", document.getElementById('messageToSend').value);
+    const writer = port.writable.getWriter();
+    await writer.write(dataToSend);
+    writer.releaseLock();
+    console.log("Message sent:", document.getElementById('messageToSend').value);
   } else {
-      console.error("Port not connected or not writable.");
+    console.error("Port not connected or not writable.");
   }
 }
 
@@ -109,3 +124,5 @@ function unregisterListener(listener) {
 document.getElementById("connect").addEventListener('click', toggleSerialConnection);
 
 export { connectToSerial, registerListener, unregisterListener };
+
+
