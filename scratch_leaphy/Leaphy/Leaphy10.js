@@ -27,7 +27,7 @@ let start = false // Start the simulation
 export default class Leaphy extends Sprite {
   constructor(...args) {
     super(...args);
-    this.costumes = [new Costume(`Leaphy`, `./costumes/Leaphy_${LEAPHYNUMBER}.png`, { x: 273, y: 258 })]; // Costume of sprite (leaphy)
+    this.costumes = [new Costume(`Leaphy`, `./costumes/Leaphy.png`, { x: 273, y: 258 })]; // Costume of sprite (leaphy)
     this.triggers = [new Trigger(Trigger.GREEN_FLAG, this.whenGreenFlagClicked)]; // Simulation trigger
     this.speed = 2; // Speed of sprite (leaphy)
     this.turnDegree = 10; // Turn degree of sprite (leaphy)
