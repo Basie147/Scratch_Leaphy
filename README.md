@@ -20,6 +20,7 @@ Thesis defence video: https://youtu.be/Q8hLr_EMPjU
 ## Installation
 https://www.leaphy.nl/leaphy-original.html
 https://app.arduino.cc/sketches
+![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/ArduinoCloud.png)
 
 
 ### Prerequisites
