@@ -19,8 +19,6 @@ Thesis defence video: https://youtu.be/Q8hLr_EMPjU
 
 ## Installation
 https://www.leaphy.nl/leaphy-original.html
-https://app.arduino.cc/sketches
-![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/ArduinoCloud.png)
 
 
 ### Prerequisites
@@ -53,6 +51,8 @@ Usage
 https://testleaphyeasybloqs.com/
 
 https://app.arduino.cc/sketches
+![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/ArduinoCloud.png)
+
 
 Example Projects
 Refer to the examples/ directory for sample projects demonstrating the integration of Scratch and Leaphy.
