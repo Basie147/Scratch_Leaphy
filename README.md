@@ -78,7 +78,8 @@ https://github.com/Basie147/Scratch_Leaphy/tree/main/Arduino
 
 3.4.3 Communication
 ESP32 microcontrollers and WebSocket technology enable real-time control and monitoring. Data is stored locally using SQLite and can be exported in CSV format.
-  ![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/Node.png)
+
+![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/Node.png)
 
 
 3.4.4 Interface
@@ -91,7 +92,6 @@ This manual serves as a complete guide for setting up and using the Digital Twin
 
   
 
-//<img src="https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/DigitalTwinLevel.png" width="100" height="100">
 
 
 
