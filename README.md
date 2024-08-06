@@ -15,6 +15,7 @@ Welcome to the Scratch_Leaphy project! This repository provides tools and resour
 
 ## Introduction
 Scratch_Leaphy allows users to interact with Leaphy hardware through Scratch, enabling an engaging learning experience in programming concepts and physical computing.
+Thesis defence video: https://youtu.be/Q8hLr_EMPjU
 
 ## Installation
 https://www.leaphy.nl/leaphy-original.html
