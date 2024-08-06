@@ -1,6 +1,7 @@
 
 # Manual for Digital Twin Integration with Leaphy Platform
-![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/leaphy-robots_orig.png)
+
+![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/leaphy-robots_orig.jpg)
 
 ## Introduction
 
@@ -9,6 +10,11 @@ This manual guides the integration of a Digital Twin (DT) into the Master Next L
 ## Understanding a Digital Twin (DT)
 
 A Digital Twin is a virtual representation of a physical system that mirrors the real-world entity through continuous data exchange. It allows real-time monitoring, simulation, and analysis, enabling prediction of outcomes and optimization of operations.
+
+
+![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/DigitalTwinLevel.png)
+
+
 
 ## Key Components
 
@@ -82,6 +88,8 @@ This manual serves as a complete guide for setting up and using the Digital Twin
   ![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/ArduinoCloud.png)
   ![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/DigitalTwin.png)
   
+
+//<img src="https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/DigitalTwinLevel.png" width="100" height="100">
 
 
 
