@@ -43,6 +43,10 @@ Load the Scratch extension for Leaphy from the docs/ directory.
 Start creating projects by using Scratch blocks to control the Leaphy hardware.
 Usage
 
+
+https://testleaphyeasybloqs.com/
+
+
 Example Projects
 Refer to the examples/ directory for sample projects demonstrating the integration of Scratch and Leaphy.
 
