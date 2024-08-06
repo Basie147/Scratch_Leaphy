@@ -19,6 +19,8 @@ Thesis defence video: https://youtu.be/Q8hLr_EMPjU
 
 ## Installation
 https://www.leaphy.nl/leaphy-original.html
+https://app.arduino.cc/sketches
+
 
 ### Prerequisites
 Ensure you have the following:
@@ -49,6 +51,7 @@ Usage
 
 https://testleaphyeasybloqs.com/
 
+https://app.arduino.cc/sketches
 
 Example Projects
 Refer to the examples/ directory for sample projects demonstrating the integration of Scratch and Leaphy.
