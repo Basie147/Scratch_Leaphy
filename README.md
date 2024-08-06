@@ -1,6 +1,8 @@
 # Scratch_Leaphy
 
 Welcome to the Scratch_Leaphy project! This repository provides tools and resources to integrate Leaphy, a physical computing platform, with Scratch, a visual programming language. It aims to offer an intuitive way for users, especially beginners and educators, to explore programming and electronics.
+![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/DigitalTwin.png)
+
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -13,9 +15,13 @@ Welcome to the Scratch_Leaphy project! This repository provides tools and resour
 
 ## Introduction
 Scratch_Leaphy allows users to interact with Leaphy hardware through Scratch, enabling an engaging learning experience in programming concepts and physical computing.
+Thesis defence video: https://youtu.be/Q8hLr_EMPjU
 
 ## Installation
 https://www.leaphy.nl/leaphy-original.html
+https://app.arduino.cc/sketches
+![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/ArduinoCloud.png)
+
 
 ### Prerequisites
 Ensure you have the following:
@@ -46,6 +52,7 @@ Usage
 
 https://testleaphyeasybloqs.com/
 
+https://app.arduino.cc/sketches
 
 Example Projects
 Refer to the examples/ directory for sample projects demonstrating the integration of Scratch and Leaphy.
