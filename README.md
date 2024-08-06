@@ -1,6 +1,8 @@
 # Scratch_Leaphy
 
 Welcome to the Scratch_Leaphy project! This repository provides tools and resources to integrate Leaphy, a physical computing platform, with Scratch, a visual programming language. It aims to offer an intuitive way for users, especially beginners and educators, to explore programming and electronics.
+![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/DigitalTwin.png)
+
 
 ## Table of Contents
 - [Introduction](#introduction)
