@@ -1,70 +1,75 @@
-cratch_Leaphy
+# Scratch_Leaphy
 
-Welcome to the Scratch_Leaphy project! This repository contains resources and code to facilitate the integration of Leaphy, a physical computing platform, with Scratch, a visual programming language. The goal is to provide an easy-to-use interface for users, especially beginners and educators, to create interactive projects using Leaphy and Scratch.
+Welcome to the Scratch_Leaphy project! This repository provides tools and resources to integrate Leaphy, a physical computing platform, with Scratch, a visual programming language. It aims to offer an intuitive way for users, especially beginners and educators, to explore programming and electronics.
 
-Table of Contents
+## Table of Contents
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
-Introduction
-Installation
-Getting Started
-Usage
-Contributing
-License
-Acknowledgments
-Introduction
+## Introduction
+Scratch_Leaphy allows users to interact with Leaphy hardware through Scratch, enabling an engaging learning experience in programming concepts and physical computing.
 
-Scratch_Leaphy enables users to control and interact with the Leaphy hardware using Scratch. This combination allows for an engaging learning experience, where users can learn programming concepts, electronics, and physical computing in an intuitive and visual way.
+## Installation
 
-Installation
+### Prerequisites
+Ensure you have the following:
+- Scratch
+- Python 3.x
+- Leaphy hardware and drivers
 
-Prerequisites
-Before you begin, ensure you have the following installed:
-
-Scratch
-Python 3.x
-Leaphy hardware and drivers
-Steps
-Clone the repository:
-bash
-Code kopiëren
-git clone https://github.com/Basie147/Scratch_Leaphy.git
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Basie147/Scratch_Leaphy.git
 Navigate to the project directory:
 bash
 Code kopiëren
 cd Scratch_Leaphy
 Install the required Python packages:
+bash
 Code kopiëren
 pip install -r requirements.txt
 Getting Started
 
 Connect your Leaphy hardware to your computer.
 Open the Scratch editor.
-Load the Scratch extension for Leaphy by following the instructions provided in the docs/ directory.
-Start creating your project by dragging and dropping Scratch blocks to interact with the Leaphy hardware.
+Load the Scratch extension for Leaphy from the docs/ directory.
+Start creating projects by using Scratch blocks to control the Leaphy hardware.
 Usage
 
 Example Projects
-Check out the examples/ directory for sample projects that demonstrate how to use Scratch with Leaphy. Each example includes a README file explaining the project's functionality and how to set it up.
+Refer to the examples/ directory for sample projects demonstrating the integration of Scratch and Leaphy.
 
 Documentation
-Detailed documentation can be found in the docs/ directory. This includes setup guides, API documentation, and troubleshooting tips.
+Detailed setup guides, API documentation, and troubleshooting tips are available in the docs/ directory.
 
 Contributing
 
-We welcome contributions from the community! If you'd like to contribute, please follow these steps:
+We welcome contributions! Please follow these steps:
 
 Fork the repository.
-Create a new branch (git checkout -b feature-branch).
-Make your changes and commit them (git commit -m 'Add some feature').
-Push to the branch (git push origin feature-branch).
+Create a new branch:
+bash
+Code kopiëren
+git checkout -b feature-branch
+Make changes and commit them:
+bash
+Code kopiëren
+git commit -m 'Add some feature'
+Push to the branch:
+bash
+Code kopiëren
+git push origin feature-branch
 Open a Pull Request.
-Please make sure your code adheres to the project's coding standards and includes appropriate tests.
-
 License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 Acknowledgments
 
-Special thanks to the creators of Scratch and Leaphy for their amazing tools.
-This project was inspired by the need to make programming and electronics accessible to everyone, especially young learners.
+Special thanks to the creators of Scratch and Leaphy for their tools, inspiring accessible programming and electronics education.
