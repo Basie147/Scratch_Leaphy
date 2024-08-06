@@ -1,6 +1,10 @@
 
 # Manual for Digital Twin Integration with Leaphy Platform
-![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/leaphy-robots_orig.png)
+
+
+<img src="[https://your-image-url.type](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/leaphy-robots_orig.jpg)" width="100" height="100">
+
+
 
 ## Introduction
 
