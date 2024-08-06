@@ -51,7 +51,11 @@ A line follower robot detects and follows a path using two infrared sensors for 
 
 
 ## Software
-The DT system includes the Leaphy system (slave), the master module, and the user web interface. The master module manages communication between the Leaphy and the website. The simulation engine, developed using LeopardJS, provides a platform for simulation scenarios.
+Arduino Cloud sketches allow users to write, compile, and upload code to Arduino-compatible devices directly from the cloud. It supports real-time monitoring and control of connected devices through a web interface. Users can create and manage  projects, define variables, and visualize data using customizable dashboards. The cloud environment provides access to libraries and allows easy integration with third-party services. It also offers remote updates and device management, making it convenient for deploying and maintaining projects without needing direct physical access to the hardware. https://app.arduino.cc/sketches
+
+![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/ArduinoCloud.png)
+
+
 
 Communication
 The system uses WebSocket for real-time communication, with data formatted in JSON. The ESP32 microcontroller facilitates mesh networking, allowing communication among multiple robots.
@@ -72,13 +76,14 @@ https://github.com/Basie147/Scratch_Leaphy/tree/main/Arduino
 
 
 3.4.2 Software
-  ![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/ArduinoCloud.png)
+
     ![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/DigitalTwin.png)
 
 
 3.4.3 Communication
 ESP32 microcontrollers and WebSocket technology enable real-time control and monitoring. Data is stored locally using SQLite and can be exported in CSV format.
-  ![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/Node.png)
+
+![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/Node.png)
 
 
 3.4.4 Interface
@@ -91,7 +96,6 @@ This manual serves as a complete guide for setting up and using the Digital Twin
 
   
 
-//<img src="https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/DigitalTwinLevel.png" width="100" height="100">
 
 
 
