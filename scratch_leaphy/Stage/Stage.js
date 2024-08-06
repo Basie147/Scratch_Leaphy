@@ -52,7 +52,7 @@ export default class Stage extends StageBase {
   }
 }
 
-
+// Update locations
 export const data = [
   [-20, 138, 98],   // 0
   [77, 131, 86],    // 1

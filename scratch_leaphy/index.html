@@ -13,7 +13,6 @@
             color: #333;
             font-family: Arial, sans-serif;
         }
-
         /* Container styles */
         .top-container {
             display: flex;
@@ -21,7 +20,6 @@
             background-color: #e8e2e2;
             padding: 10px;
         }
-
         /* CSV display area styles */
         #csv-display {
             flex: 1;
@@ -31,7 +29,6 @@
             margin-bottom: 10px;
             min-height: 50vh;
         }
-
         /* Control panel and Node ID container styles */
         #controls, #node-id-container {
             flex: 1;
@@ -40,14 +37,6 @@
             background-color: #343444;
             color: white;
             margin-bottom: 10px;
-        }
-
-        #controls {
-            order: 1;
-        }
-
-        #node-id-container {
-            order: 2;
         }
 
         /* Serial interface styles */
@@ -129,7 +118,7 @@
                 width: auto;
             }
         }
-
+        /* Responsive adjustments for smaller screens */
         @media (max-width: 767px) {
             .top-container {
                 flex-direction: column;
@@ -207,7 +196,6 @@
             <button id="node-id_10">Set Leaphy ID 10</button>
         </div>
     </div>
-
     <div id="serial-interface">
         <div>
             <div style="display: flex; align-items: center;">
@@ -248,7 +236,7 @@
             <button id="framerateButton">Change Framerate</button>
         </div>
     </div>
-
+    
     <script type="module">
         import project from "./index.js";
         import { csvFileData } from '../Lib/csv.js';
