@@ -45,6 +45,11 @@ A line follower robot detects and follows a path using two infrared sensors for 
     
 ![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/Hardware.jpg)
 
+
+<img src="https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/PinOutESP32.png" width="600" height="400">
+
+
+
 ## Software
 The DT system includes the Leaphy system (slave), the master module, and the user web interface. The master module manages communication between the Leaphy and the website. The simulation engine, developed using LeopardJS, provides a platform for simulation scenarios.
 
@@ -64,13 +69,17 @@ https://github.com/Basie147/Scratch_Leaphy/tree/main/Arduino
 3.4 Implementation
 
 3.4.1 Hardware
-Components include the ESP32 microcontroller, infrared line sensors, ultrasonic sensors, and DC motors. The hardware setup ensures proper functionality and integration.
+
 
 3.4.2 Software
-The simulation engine uses LeopardJS, with scenarios hosted on a web server. The engine simulates robot movements and sensor interactions.
+  ![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/ArduinoCloud.png)
+    ![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/DigitalTwin.png)
+
 
 3.4.3 Communication
 ESP32 microcontrollers and WebSocket technology enable real-time control and monitoring. Data is stored locally using SQLite and can be exported in CSV format.
+  ![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/Node.png)
+
 
 3.4.4 Interface
 The user interface provides control for simulations, real-time monitoring, and data logging. It features intuitive controls for easy interaction.
@@ -79,8 +88,7 @@ The user interface provides control for simulations, real-time monitoring, and d
 A flowchart provides a step-by-step guide for setting up the Leaphy robot with the DT, including troubleshooting and error correction procedures.
 
 This manual serves as a complete guide for setting up and using the Digital Twin system with the Leaphy platform, Arduino Cloud, and Digital Twin Website, providing a practical and comprehensive learning experience.
-  ![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/ArduinoCloud.png)
-  ![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/DigitalTwin.png)
+
   
 
 //<img src="https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/DigitalTwinLevel.png" width="100" height="100">
