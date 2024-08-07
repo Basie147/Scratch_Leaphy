@@ -52,6 +52,8 @@ Overview software:
 
 
 ## Developer Page
+https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Main/Integrating%20Digital%20Twin%20Technology%20into%20the%20Master%20Next%20Level%20Engineering.pdf
+
 
 
 
