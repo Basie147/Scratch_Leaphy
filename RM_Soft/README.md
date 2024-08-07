@@ -50,19 +50,14 @@ With Scratch, you can simulate a line follower robot by creating a virtual envir
 3. Use "Sensing" blocks to detect the line. For example, you can use the "touching color" block to check if the robot is touching the line.
 4. Create a loop to keep the robot moving along the line. Adjust the robot's direction based on whether it is touching the line or not.
 
-
-
-
 ![Arduino Cloud Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Soft/Photo/CodeFlow.png)
 
-
-
 ### Leaphy Digital Twin
-The Leaphy Digital Twin platform enables the simulation and real-time monitoring of the Leaphy robot in a virtual environment. This tool allows for the visualization of the robot's operations and the testing of programming code before deploying it to the physical robot.
+The Leaphy Digital Twin platform enables the simulation and real-time monitoring of the Leaphy robot in a virtual environment. This tool allows for the visualization of the robot's operations and the testing of programming code before deploying it to the physical robot. [Leaphy Digital Twin](https://digitaltwin.leaphyeasybloqs.com/)
 
 ![Digital Twin Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Soft/Photo/DigitalTwin.png)
 
-[Leaphy Digital Twin](https://digitaltwin.leaphyeasybloqs.com/)
+
 
 #### Communication
 ESP32 microcontrollers and WebSocket technology enable real-time control and monitoring. Data is stored locally using SQLite and can be exported in CSV format.
