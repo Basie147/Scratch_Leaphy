@@ -1,98 +1,68 @@
+# Leaphy V2 Build Page
 
-# Manual for Digital Twin Integration with Leaphy Platform
+## 1
+Place the two screws, the side frame, and the motor next to each other.
+![Step 1](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04799.jpg)
 
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/leaphy-robots_orig.jpg)
+## 2
+Position the wooden side frame on the motor, ensuring the yellow circle and the motor align with the holes. Tighten the screws.
+![Step 2](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04797.jpg)
 
-## Introduction
+## 3
+Turn the frame over. First, place wheel A, then wheel B with the rubber around it, and finally wheel 3. Tighten the screw on the axle. This screw is slightly longer than the other screws.
 
-This manual guides the integration of a Digital Twin (DT) into the Master Next Level Engineering (MNLE) program at the University of Applied Sciences Utrecht (HU) using the Leaphy platform, Arduino Cloud, and a dedicated Digital Twin website. The DT bridges theoretical knowledge with practical applications, equipping students with essential skills in robotics.
+Repeat steps two and three for the other side as well.
+![Step 3](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04795.jpg)
 
-## Understanding a Digital Twin (DT)
+## 4
+Place the middle frame exactly as shown in the image.
+![Step 4](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04794.jpg)
 
-A Digital Twin is a virtual representation of a physical system that mirrors the real-world entity through continuous data exchange. It allows real-time monitoring, simulation, and analysis, enabling prediction of outcomes and optimization of operations.
+## 5
+Push the frames together and position the frame exactly as shown in the image.
+![Step 5](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04793.jpg)
 
+## 6
+Do not move the middle frame as in step 5. Place the bottom plate on top with the Leaphy logo facing up, as shown. Tighten the four screws, but DO NOT OVERTIGHTEN. Be careful, as overtightening can damage the wood and cause the screws to become loose.
+![Step 6](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04792.jpg)
 
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/DigitalTwinLevel.png)
+## 7
+Turn the frame over and place the three IR sensors. Optionally, you can connect all three 3-pin female-to-female cables now so you don't have to do it later.
+![Step 7](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04791.jpg)
 
+## 8
+Place the batteries in the holder and connect the red wire to the + terminal of the adapter and the black wire to the - terminal. Secure the battery holder in the middle with Velcro. Refer to step 7 to see where the Velcro spot is placed.
+![Step 8](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04790.jpg)
 
+## 9
+Place the shields on the top plate: 
+- I2C shield
+- Delphi shield
+- Motor shield
 
-## Key Components
+These can be slotted together; they should not fit together any other way. Ensure that the I2C shield is placed at the front on the flat side and the motor shield at the pointed end.
 
-Leaphy Robot: The physical hardware serving as the primary subject of the DT.
-Arduino Cloud: A platform for programming and managing the Leaphy robot, allowing remote control and data collection.
-Digital Twin Website: An online interface for interacting with the digital representation of the Leaphy robot.
-Objectives
+Place the RGB LED in your preferred location; the front left is a convenient spot.
+![Step 9](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04789.jpg)
 
-Hands-On Learning: Practical engineering tasks.
-Skill Development: Understanding complex concepts through practical application.
-Real-World Simulation: Scenario testing and data-driven decision-making.
+## 10
+Screw the top plate on with the four screws. DO NOT OVERTIGHTEN. Be careful, as overtightening can damage the wood and cause the screws to become loose.
 
-## Requirements
+Place the rear fin, ensuring the Leaphy stands horizontally.
+![Step 10](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04788.jpg)
 
-Leaphy Robot Kit: Includes necessary hardware components.
-Computer with Internet Access: For accessing the Arduino Cloud and Digital Twin Website.
-Arduino IDE: Software for programming the Leaphy robot.
-Digital Twin Website Account: Credentials for interacting with the digital model.
-3.3 Detailed Design
+## 11
+Connect the motor wires. Connect Motor R to side B and Motor L to side A. The wires must be connected to the - and + terminals. If you connect them incorrectly, the wheel will turn in the wrong direction; in that case, swap the wires on the + and - terminals.
+![Step 11](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04787.jpg)
 
-## Hardware
-A line follower robot detects and follows a path using two infrared sensors for line detection and an ultrasonic sensor for obstacle detection. It includes two DC motors for movement.
+## 12
+Ensure the switches are set to OFF. Then, insert the power cable into the shield.
+![Step 12](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04785.jpg)
 
-    •	The Leaphy Original frame: 1
-    •	DC motor: 2
-    •	IR Sensor: 3
-    •	Ultrasonic sensor: 1
-    •	Leaphy Delphy shield: 1
-    •	Leaphy Delphy I2C Module: 1
-    •	Leaphy Delphy Motor Module: 1
-    •	RGB LED: 1
+## 13
+Connect all the jumpers.
+![Step 13](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04784.jpg)
 
-## Software
-The DT system includes the Leaphy system (slave), the master module, and the user web interface. The master module manages communication between the Leaphy and the website. The simulation engine, developed using LeopardJS, provides a platform for simulation scenarios.
-
-Communication
-The system uses WebSocket for real-time communication, with data formatted in JSON. The ESP32 microcontroller facilitates mesh networking, allowing communication among multiple robots.
-
-Interface
-The user interface, developed in JavaScript, is hosted on a dedicated website. It allows users to adjust simulation parameters, monitor real-time status, and log data for performance analysis.
-
-# Learning Experience
-The hackathon week covers:
-
-Monday: Introduction to the robot and DT concepts.
-Tuesday: Development of an interactive system.
-Wednesday: Data management and maintenance detection.
-Thursday: Change management and human factors.
-Friday: Evaluation and professional skills development.
-3.3.6 Design Test
-Test plans validate the design aspects, including the Leaphy module, master module, web interface, and learning outcomes.
-
-3.4 Implementation
-
-3.4.1 Hardware
-Components include the ESP32 microcontroller, infrared line sensors, ultrasonic sensors, and DC motors. The hardware setup ensures proper functionality and integration.
-
-3.4.2 Software
-The simulation engine uses LeopardJS, with scenarios hosted on a web server. The engine simulates robot movements and sensor interactions.
-
-3.4.3 Communication
-ESP32 microcontrollers and WebSocket technology enable real-time control and monitoring. Data is stored locally using SQLite and can be exported in CSV format.
-
-3.4.4 Interface
-The user interface provides control for simulations, real-time monitoring, and data logging. It features intuitive controls for easy interaction.
-
-3.4.5 Setting Up the System
-A flowchart provides a step-by-step guide for setting up the Leaphy robot with the DT, including troubleshooting and error correction procedures.
-
-This manual serves as a complete guide for setting up and using the Digital Twin system with the Leaphy platform, Arduino Cloud, and Digital Twin Website, providing a practical and comprehensive learning experience.
-  ![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/ArduinoCloud.png)
-  ![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/DigitalTwin.png)
-  
-
-//<img src="https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/DigitalTwinLevel.png" width="100" height="100">
-
-
-
-
-
-
+## 14
+![Step 14](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04783.jpg)
+Place the ESP as indicated on the printed circuit board. Install the ultrasonic sensor on the header at the front.
