@@ -1,67 +1,68 @@
 # Leaphy V2 Build Page
 
 ## 1
-Leg de twee schroeven het zij frame en de motor naast elkaar. 
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04799.jpg)
+Place the two screws, the side frame, and the motor next to each other.
+![Step 1](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04799.jpg)
+
 ## 2
-    Leg het houte zijframe op de motor en zorg dat de gele ronde en de motor overeen komoen met de gaten. Draai de schroeven aan. 
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04797.jpg)
+Position the wooden side frame on the motor, ensuring the yellow circle and the motor align with the holes. Tighten the screws.
+![Step 2](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04797.jpg)
+
 ## 3
-Draai het frame om. plaats wiel A als eerst , dan B met het rubber er omheen, en als laats 3. draai de schoef aan in de as. deze schoef is iets langer dan de andere schroeven. 
+Turn the frame over. First, place wheel A, then wheel B with the rubber around it, and finally wheel 3. Tighten the screw on the axle. This screw is slightly longer than the other screws.
 
-Volg stap twee en drie ook voor de andere zijde
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04795.jpg)
-## 4 
-Plaats het midden frame excact als op de afbeelding. 
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04794.jpg)
+Repeat steps two and three for the other side as well.
+![Step 3](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04795.jpg)
+
+## 4
+Place the middle frame exactly as shown in the image.
+![Step 4](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04794.jpg)
+
 ## 5
-Duw de frames in elkaar en leg het frame excat zo neer als op de afbeelding
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04793.jpg)
-## 6 
-Verplaats het midden frame niet zoals in stap 5. leg het onder plad er op met leaphy logo aan de bovenkant, zoals afgebeeld. Schoef de vier schoeven aan, DRAAI NIET TE HARD. Wees voorzichtig. Je draait het hout kapot anders en dan zitten de schoeven los. 
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04792.jpg)
+Push the frames together and position the frame exactly as shown in the image.
+![Step 5](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04793.jpg)
+
+## 6
+Do not move the middle frame as in step 5. Place the bottom plate on top with the Leaphy logo facing up, as shown. Tighten the four screws, but DO NOT OVERTIGHTEN. Be careful, as overtightening can damage the wood and cause the screws to become loose.
+![Step 6](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04792.jpg)
+
 ## 7
-Draai et frame op en plaats de drie IR sensoren. Optioneel is om al de drie 3* female to female kabels te plaatsen zodat je dat later niet meer hoeft te doen. 
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04791.jpg)
+Turn the frame over and place the three IR sensors. Optionally, you can connect all three 3-pin female-to-female cables now so you don't have to do it later.
+![Step 7](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04791.jpg)
 
-## 8 
-Plaats de batterijen in de houder en sluit de rode draad aan op de + van de adapter en de zwarte draad op de -. Met klittenband sicker kan je de batterijhouder plaatsen in het midden. Zie stap 7 waarde de klittenband stip is geplaatst. 
+## 8
+Place the batteries in the holder and connect the red wire to the + terminal of the adapter and the black wire to the - terminal. Secure the battery holder in the middle with Velcro. Refer to step 7 to see where the Velcro spot is placed.
+![Step 8](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04790.jpg)
 
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04790.jpg)
-## 8 
-Plaatst de shields op het boven blad. 
-I2c shield
-Delphy shield 
-Motorshield. 
-Deze kunnen inelkaar geschoven worden, dit zou niet andersom in elkaar passen. Zorg dat het I2C shield aan voorkant geplaatst is aan de vlakke voorzijde. en het motorshield in de punt. 
+## 9
+Place the shields on the top plate: 
+- I2C shield
+- Delphi shield
+- Motor shield
 
-Plaatst de RGB LED waar je dat leuk vind Links vooraan is een handige plek. 
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04789.jpg)
-## 9 
-Schoef het bovenplad er op met de vier schoeven. RAAI NIET TE HARD. Wees voorzichtig. Je draait het hout kapot anders en dan zitten de schoeven los. 
+These can be slotted together; they should not fit together any other way. Ensure that the I2C shield is placed at the front on the flat side and the motor shield at the pointed end.
 
-Plaats de achter vin, zorg dat de Leaphy Horizontaal komt te staan. 
+Place the RGB LED in your preferred location; the front left is a convenient spot.
+![Step 9](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04789.jpg)
 
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04788.jpg)
-## 10 
-Sluit de Motor draaden aan. Motor R op kant B aan en Motor L op kant A. De draaden moeten op de - en + aangesloten worden. Als je ze verkeerd aansluit gaat het wiel de verkeerde kant op, niks ergs dan draai je draden op de + en - naderhand om. 
+## 10
+Screw the top plate on with the four screws. DO NOT OVERTIGHTEN. Be careful, as overtightening can damage the wood and cause the screws to become loose.
 
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04787.jpg)
-## 11 
-Zorg dat de schakelaars op OFF staan. Plaats daarna de voedingskabel in het shield. 
+Place the rear fin, ensuring the Leaphy stands horizontally.
+![Step 10](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04788.jpg)
 
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04785.jpg)
+## 11
+Connect the motor wires. Connect Motor R to side B and Motor L to side A. The wires must be connected to the - and + terminals. If you connect them incorrectly, the wheel will turn in the wrong direction; in that case, swap the wires on the + and - terminals.
+![Step 11](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04787.jpg)
+
 ## 12
+Ensure the switches are set to OFF. Then, insert the power cable into the shield.
+![Step 12](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04785.jpg)
 
-
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04784.jpg)
 ## 13
-Sluit daarna alle jummpers aan. 
+Connect all the jumpers.
+![Step 13](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04784.jpg)
 
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04783.jpg)
-## 14 
-Plaats de ESP op de manier zoals op de printplaat is beschreven. 
-plaats de ultrasone op de header aan de voorkant. 
-
-
-
+## 14
+![Step 14](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04783.jpg)
+Place the ESP as indicated on the printed circuit board. Install the ultrasonic sensor on the header at the front.
