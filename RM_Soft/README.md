@@ -57,7 +57,7 @@ The Leaphy Digital Twin platform, built on Scratch, has extended features such a
 
 ### ESP32 PainlessMesh Communication
 
-PainlessMesh is a library for creating a mesh network with ESP32 microcontrollers. A mesh network allows multiple devices (nodes) to communicate with each other directly and indirectly, extending the range and reliability of the network. Here's a brief overview of how PainlessMesh communication works:
+PainlessMesh is the library we will use for creating a mesh network with ESP32 microcontrollers. A mesh network allows multiple devices (nodes) to communicate with each other directly and indirectly, extending the range and reliability of the network. Here's a brief overview of how PainlessMesh communication works:
 
 #### Key Features
 - **Decentralized Network**: Each node in the mesh network can communicate with any other node, without the need for a central router or access point.
