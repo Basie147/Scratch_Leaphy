@@ -35,7 +35,7 @@ Place the batteries in the holder and connect the red wire to the + terminal of 
 ![Step 8](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04790.jpg)
 
 ## 9
-Place the shields on the top plate: 
+Place the shields on the top plate:
 - I2C shield
 - Delphi shield
 - Motor shield
@@ -60,9 +60,23 @@ Ensure the switches are set to OFF. Then, insert the power cable into the shield
 ![Step 12](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04785.jpg)
 
 ## 13
-Connect all the jumpers.
+Connect all the jumpers using female-to-female headers.
+
+- **GND:** Ground (-)
+- **VCC:** Supply (+) voltage can vary from 3.3V to 5V
+- **OUT:** Signal (Data)
+- **D:** Digital in/output
+- **A:** Analog in/output
+
+- **Line L & R:** For detecting the line in the middle
+- **Encoder L & R:** Used for counting stripes; only L is used for now
+
+The sensor and motor module are already connected through the printed circuit board (PCB). Green indicates availability, and ~ means a PWM signal is available on the pin.
+
 ![Step 13](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04784.jpg)
 
+![Pinout](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/PinOutESP32.png)
+
 ## 14
+Place the ESP as indicated on the PCB. Install the ultrasonic sensor on the header at the front.
 ![Step 14](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04783.jpg)
-Place the ESP as indicated on the printed circuit board. Install the ultrasonic sensor on the header at the front.
