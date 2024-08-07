@@ -6,14 +6,14 @@ Welcome to the Leaphy V2 build page! This guide will walk you through the step-b
 
 
 ## Material list:
-    1 * middle frame
-    2 * middle side frames
+    1 * Middle frame
+    2 * Middle side frames
     1 * Finn 
     1 * Bot & Top Plate
   
     1 * USB-C cable
-    1 * battery adapter
-    6 * batteries
+    1 * Battery adapter
+    6 * Batteries
     1 * Battery holder
     
     1 * ESP32
@@ -21,11 +21,11 @@ Welcome to the Leaphy V2 build page! This guide will walk you through the step-b
     1 * Ultrasonic sensor
     2 * DC motors
   
-    2 * motor screws
+    2 *  Motor screws
     17 * Small screws
-    8 * Big screws
-    9 * Female to female (long length)
-    4 *  female to female (medium length)
+    8 *  Big screws
+    9 *  Female to female (long length)
+    4 *  Female to female (medium length)
 
 ## 1
 Place the two screws, the side frame, and the motor next to each other.
