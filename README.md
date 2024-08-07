@@ -1,11 +1,14 @@
 
 # Manual for Digital Twin Integration with Leaphy Platform
 
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/leaphy-robots_orig.jpg)
-
 ## Introduction
 
 This manual guides the integration of a Digital Twin (DT) into the Master Next Level Engineering (MNLE) program at the University of Applied Sciences Utrecht (HU) using the Leaphy platform, Arduino Cloud, and a dedicated Digital Twin website. The DT bridges theoretical knowledge with practical applications, equipping students with essential skills in robotics.
+
+![Step 14](https://github.com/Basie147/Scratch_Leaphy/blob/main/Build/Photo/DSC04783.jpg)
+
+
+
 
 ## Objectives
 Hands-On Learning: Practical engineering tasks.
