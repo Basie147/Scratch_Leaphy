@@ -23,7 +23,11 @@ Alternatively, you can use the [Arduino IDE](https://www.arduino.cc/en/software)
 
 
 https://scratch.mit.edu/projects/1010895729/editor
-![Arduino Cloud Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Soft/Photo/Scratch.png)
+![Arduino Cloud Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Soft/Photo/ScratchCode.png)
+![Arduino Cloud Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Soft/Photo/ScratchBack.png)
+
+![Arduino Cloud Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Soft/Photo/CodeFlow.png)
+
 
 
 ### Leaphy Digital Twin
