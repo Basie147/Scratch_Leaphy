@@ -1,5 +1,5 @@
 
-# Leaphuy Digital Twin Main page
+# Leaphy Digital Twin Main page
 
 ## Introduction
 
