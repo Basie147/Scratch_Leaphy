@@ -74,6 +74,6 @@ PainlessMesh is the library we will use for creating a mesh network with ESP32 m
 
 To use the Digital Twin website use the following files for [Master & Slave Code](https://github.com/Basie147/Scratch_Leaphy/tree/main/Arduino)
 
-To monitor the system, simply connect the Master ESP32 with a wired connection to your device. Click on the connect button and the ESP32 will appear. [Leaphy Digital Twin](https://digitaltwin.leaphyeasybloqs.com/)
+To monitor the system, simply connect the Master ESP32 with a wired connection to your device. Click on the connect button and the ESP32 will appear. The website is for now ONLY compatible with the Chrome browser. [Leaphy Digital Twin](https://digitaltwin.leaphyeasybloqs.com/)
 
 ![Digital Twin Serial Connection](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Soft/Photo/DT_Ser.png)
