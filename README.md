@@ -1,5 +1,4 @@
-
-# Leaphy Digital Twin Main page
+# Leaphy Digital Twin Main Page
 
 ## Introduction
 
@@ -7,62 +6,50 @@ This manual guides the integration of a Digital Twin (DT) into the Master Next L
 
 ![Step 14](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Build/Photo/DSC04783.jpg)
 
-Digital Twin Defence Video: https://www.youtube.com/watch?v=Q8hLr_EMPjU
+[Digital Twin Defence Video](https://www.youtube.com/watch?v=Q8hLr_EMPjU)
 
 ## Objectives
-Hands-On Learning: Practical engineering tasks.
-Skill Development: Understanding complex concepts through practical application.
-Real-World Simulation: Scenario testing and data-driven decision-making.
 
-# Learning Experience
+- **Hands-On Learning**: Practical engineering tasks.
+- **Skill Development**: Understanding complex concepts through practical application.
+- **Real-World Simulation**: Scenario testing and data-driven decision-making.
+
+## Learning Experience
+
 The hackathon week covers:
-- Monday: Introduction to the robot and DT concepts.
-- Tuesday: Development of an interactive system.
-- Wednesday: Data management and maintenance detection.
-- Thursday: Change management and human factors.
-- Friday: Evaluation and professional skills development.
+- **Monday**: Introduction to the robot and DT concepts.
+- **Tuesday**: Development of an interactive system.
+- **Wednesday**: Data management and maintenance detection.
+- **Thursday**: Change management and human factors.
+- **Friday**: Evaluation and professional skills development.
 
-## Intorduction Digital Twin (DT)
+## Introduction to Digital Twin (DT)
+
 A Digital Twin is a virtual representation of a physical system that mirrors the real-world entity through continuous data exchange. It allows real-time monitoring, simulation, and analysis, enabling prediction of outcomes and optimization of operations.
 
-![](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Main/Photo/DigitalTwinLevel.png)
+![Digital Twin Level](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Main/Photo/DigitalTwinLevel.png)
 
 ## Key Components
 
-- Leaphy Robot: The physical hardware serving as the primary subject of the DT.
-- Arduino Cloud: A platform for programming and managing the Leaphy robot, allowing remote control and data collection.
-- Digital Twin Website: An online interface for interacting with the digital representation of the Leaphy robot.
+- **Leaphy Robot**: The physical hardware serving as the primary subject of the DT.
+- **Arduino Cloud**: A platform for programming and managing the Leaphy robot, allowing remote control and data collection.
+- **Digital Twin Website**: An online interface for interacting with the digital representation of the Leaphy robot.
 
 ## Hardware
 
-( Step 1 ) Readme first: https://github.com/Basie147/Scratch_Leaphy/tree/main/RM_Build
+1. **Readme First**: [Leaphy Hardware Instructions](https://github.com/Basie147/Scratch_Leaphy/tree/main/RM_Build)
 
 ## Software
 
-( Step 2 ) Readme first: https://github.com/Basie147/Scratch_Leaphy/tree/main/RM_Soft
+1. **Readme First**: [Leaphy Software Instructions](https://github.com/Basie147/Scratch_Leaphy/tree/main/RM_Soft)
 
-Overview software:
+### Overview Software
 
-- Leaphy Easy Bloqs:          https://leaphyeasybloqs.com
-- Arduino Cloud sketches:     https://app.arduino.cc/sketches
-  - Arduino files:              https://github.com/Basie147/Scratch_Leaphy/tree/main/Arduino
-- Leaphy Digital Twin:        https://digitaltwin.leaphyeasybloqs.com
-
-
-
+- **Leaphy Easy Bloqs**: [Leaphy Easy Bloqs](https://leaphyeasybloqs.com)
+- **Arduino Cloud Sketches**: [Arduino Cloud Sketches](https://app.arduino.cc/sketches)
+  - **Arduino Files**: [Arduino Files on GitHub](https://github.com/Basie147/Scratch_Leaphy/tree/main/Arduino)
+- **Leaphy Digital Twin**: [Digital Twin Interface](https://digitaltwin.leaphyeasybloqs.com)
 
 ## Developer Page
-https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Main/Integrating%20Digital%20Twin%20Technology%20into%20the%20Master%20Next%20Level%20Engineering.pdf
 
-
-
-
-
-
-
-
-
-
-
-
-
+[Integrating Digital Twin Technology into the Master Next Level Engineering](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Main/Integrating%20Digital%20Twin%20Technology%20into%20the%20Master%20Next%20Level%20Engineering.pdf)
