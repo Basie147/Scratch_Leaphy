@@ -1,4 +1,4 @@
-# Digital Twin Software Manuel
+# Digital Twin Software manual
 
 ## Introduction
 Welcome to the software manual for integrating the Digital Twin with the Leaphy platform. This guide provides detailed instructions on the software tools and processes required to program and manage your Leaphy robot effectively. By utilizing these tools, you can enhance your robot's functionality and learning experience.
