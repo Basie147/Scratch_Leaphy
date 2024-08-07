@@ -36,22 +36,19 @@ A Digital Twin is a virtual representation of a physical system that mirrors the
 
 ## Hardware
 
-
-
+Readme first: https://github.com/Basie147/Scratch_Leaphy/tree/main/RM_Build
 
 ## Software
 
-### Leaphy Easy Bloqs
+Readme first: https://github.com/Basie147/Scratch_Leaphy/tree/main/RM_Soft
+
+- Leaphy Easy Bloqs:          https://leaphyeasybloqs.com
+- Arduino Cloud sketches:     https://app.arduino.cc/sketches
+- Leaphy Digital Twin:        https://digitaltwin.leaphyeasybloqs.com
+
+- Arduino files:              https://github.com/Basie147/Scratch_Leaphy/tree/main/Arduino
 
 
-### Arduino Cloud sketches 
-
-
-### Leaphy Digital Twin
-
-![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/Readme/DigitalTwin.png)
-
-https://digitaltwin.leaphyeasybloqs.com/
 
 
 
