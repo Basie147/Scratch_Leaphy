@@ -5,7 +5,7 @@ Welcome to the software manual for integrating the Digital Twin with the Leaphy 
 
 ## Software
 
-### Leaphy Easy Bloqs (Easy Level Programming) 
+### Leaphy Easy Bloqs (Easy Level Programming)
 Leaphy Easybloqs is a block-based programming environment designed specifically for the Leaphy educational robot. It allows users, particularly beginners and young learners, to program the Leaphy robot using a visual interface with drag-and-drop code blocks, eliminating the need to write complex syntax. The blocks represent various programming constructs and robot commands, making it easy to control the robot’s movements, sensors, and other functionalities. Easybloqs simplifies the learning process, making it accessible for students to explore coding concepts. [Leaphy Easy Bloqs](https://leaphyeasybloqs.com/)
 
 ![Simulation Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Soft/Photo/Leaphyeasybloqs.png)
@@ -49,15 +49,27 @@ With Scratch, you can simulate a line follower robot by creating a virtual envir
 ![Code Flow](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Soft/Photo/CodeFlow.png)
 
 ### Leaphy Digital Twin
-The Leaphy Digital Twin platform enables the simulation and real-time monitoring of the Leaphy robot in a virtual environment. This tool allows for the visualization of the robot's operations and the testing of programming code before deploying it to the physical robot. [Leaphy Digital Twin](https://digitaltwin.leaphyeasybloqs.com/)
+The Leaphy Digital Twin platform, built on Scratch, has extended features such as device connections for data reception and saving logs to a CSV file. This enables real-time monitoring of the Leaphy robot in a virtual environment. This tool allows for the visualization of the robot's operations. [Leaphy Digital Twin](https://digitaltwin.leaphyeasybloqs.com/)
 
 ![Digital Twin Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Soft/Photo/DT.png)
 
-To monitor the system, simply connect the ESP32 with a wired connection to your device. Click on the connect button and the ESP32 will appear.
+### ESP32 PainlessMesh Communication
 
-![Digital Twin Serial Connection](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Soft/Photo/DT_Ser.png)
+PainlessMesh is a library for creating a mesh network with ESP32 microcontrollers. A mesh network allows multiple devices (nodes) to communicate with each other directly and indirectly, extending the range and reliability of the network. Here's a brief overview of how PainlessMesh communication works:
 
-#### Communication
-ESP32 microcontrollers and WebSocket technology enable real-time control and monitoring. Data is stored locally using SQLite and can be exported in CSV format.
+#### Key Features
+- **Decentralized Network**: Each node in the mesh network can communicate with any other node, without the need for a central router or access point.
+- **Self-Healing**: The network can dynamically reconfigure itself if nodes are added or removed, ensuring continuous connectivity.
+- **Scalability**: Easily add more nodes to extend the network's range and capacity.
+
+#### How It Works
+1. **Initialization**: Each ESP32 node initializes the PainlessMesh library, setting up the necessary configurations (e.g., mesh network name, password).
+2. **Connection**: Nodes automatically discover and connect to each other, forming the mesh network.
+3. **Communication**: Messages can be sent to specific nodes or broadcasted to all nodes. The library handles routing the messages through the network to reach the intended recipient.
+4. **Data Exchange**: Nodes can exchange data, such as sensor readings or control commands, enabling coordinated actions across the network.
 
 ![Communication Node Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Soft/Photo/Node.png)
+
+To monitor the system, simply connect the Master ESP32 with a wired connection to your device. Click on the connect button and the ESP32 will appear.
+
+![Digital Twin Serial Connection](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Soft/Photo/DT_Ser.png)
