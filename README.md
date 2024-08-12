@@ -5,6 +5,7 @@
 This manual guides the integration of a Digital Twin (DT) into the Master Next Level Engineering (MNLE) program at the University of Applied Sciences Utrecht (HU) using the Leaphy platform, Arduino Cloud, and a dedicated Digital Twin website. The DT bridges theoretical knowledge with practical applications, equipping students with essential skills in robotics.
 
 ![Step 14](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Build/Photo/DSC04783.jpg)
+![Digital Twin Interface](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Soft/Photo/DT.png)
 
 [Digital Twin Defence Video](https://www.youtube.com/watch?v=Q8hLr_EMPjU)
 
@@ -37,11 +38,11 @@ A Digital Twin is a virtual representation of a physical system that mirrors the
 
 ## Hardware
 
-1. **Readme First**: [Leaphy Hardware Instructions](https://github.com/Basie147/Scratch_Leaphy/tree/main/RM_Build)
+(step 1) **Readme First**: [Leaphy Hardware Instructions](https://github.com/Basie147/Scratch_Leaphy/tree/main/RM_Build)
 
 ## Software
 
-1. **Readme First**: [Leaphy Software Instructions](https://github.com/Basie147/Scratch_Leaphy/tree/main/RM_Soft)
+(Step 2) **Readme First**: [Leaphy Software Instructions](https://github.com/Basie147/Scratch_Leaphy/tree/main/RM_Soft)
 
 ### Overview Software
 
@@ -49,6 +50,13 @@ A Digital Twin is a virtual representation of a physical system that mirrors the
 - **Arduino Cloud Sketches**: [Arduino Cloud Sketches](https://app.arduino.cc/sketches)
   - **Arduino Files**: [Arduino Files on GitHub](https://github.com/Basie147/Scratch_Leaphy/tree/main/Arduino)
 - **Leaphy Digital Twin**: [Digital Twin Interface](https://digitaltwin.leaphyeasybloqs.com)
+
+## Workflow
+![Leaphy Digital Twin Workflow](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Main/Photo/LeaphyFlow.png)
+
+
+
+
 
 ## Developer Page
 
