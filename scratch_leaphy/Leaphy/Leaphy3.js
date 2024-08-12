@@ -42,7 +42,7 @@ export default class Leaphy extends Sprite {
       if (text.includes(COMMAND_NUMBER )) {
       const values = text.split(','); // Split the text by the comma
         if (values.length >= 2) { // If the index is greater that two items
-          const en_Left = parseFloat(values[0]); // Get the first value
+          const en_Left = parseFloat(values[1]); // Get the second value
           if (en_Left == 0) {start = true} // If the value is 0, start the simulation
 
           if (start == true && en_Left < LOCATIONS) {  // If the value is less than the amount of locations

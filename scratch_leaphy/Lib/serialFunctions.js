@@ -61,7 +61,8 @@ async function handleSerialData() {
       while ((newlineIndex = buffer.indexOf('\n')) >= 0) {
         const completeMessage = buffer.slice(0, newlineIndex + 1);
         buffer = buffer.slice(newlineIndex + 1);
-        processMessage(completeMessage.trim()); // Process the complete message
+        processMessage(completeMessage.trim()); // Process the complete message        
+      
       }
     }
   } catch (error) {

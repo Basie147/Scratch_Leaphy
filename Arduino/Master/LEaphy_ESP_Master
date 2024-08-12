@@ -1,84 +1,70 @@
-#include "painlessMesh.h"
+#include "painlessMesh.h"  // Mesh networking library
 
-#define   MESH_PREFIX     "whateverYouLike" // Prefix for your mesh network
-#define   MESH_PASSWORD   "somethingSneaky" // Set your own password for the mesh network
-#define   MESH_PORT       5555 // Select an unused port for your network
+// Mesh network configuration
+#define MESH_PREFIX     "whateverYouLike"   
+#define MESH_PASSWORD   "somethingSneaky"   
+#define MESH_PORT       5555                
 
-Scheduler userScheduler; // to control your personal task
-painlessMesh  mesh;
-String incomingMessage = ""; // for incoming serial data
+Scheduler userScheduler;  // Task scheduler
+painlessMesh mesh;  // Mesh network object
+String incomingMessage = "";  // Stores incoming serial data
 
-// User stub
-void sendMessage() ; // Prototype so PlatformIO doesn't complain
-
-Task taskSendMessage( TASK_SECOND , 1, &sendMessage );
-
+// Sends a message to all nodes in the mesh
 void sendMessage() {
-  String msg = incomingMessage;
-  msg += mesh.getNodeId();
-  mesh.sendBroadcast( msg );
-  taskSendMessage.setInterval(TASK_SECOND);
+    String msg = incomingMessage + mesh.getNodeId();  
+    mesh.sendBroadcast(msg);  
 }
 
-// Needed for painless library
-void receivedCallback( uint32_t from, String &msg ) {
-  Serial.printf("%s\n", msg.c_str());
+// Task to send messages periodically
+Task taskSendMessage(TASK_SECOND, 1, sendMessage);  // Create a task to send messages every second
 
-
+// Handles received messages
+void receivedCallback(uint32_t from, String &msg) {
+    Serial.printf("%u,%s\n", from, msg.c_str());  
 }
 
+// Handles new connections
 void newConnectionCallback(uint32_t nodeId) {
-    Serial.printf("--> startHere: New Connection, nodeId = %u\n", nodeId);
+    Serial.printf("New Connection, nodeId = %u\n", nodeId);  
 }
 
-void changedConnectionCallback() {
-  Serial.printf("Changed connections\n");
+// Set up the mesh network and callbacks
+void setupMeshNetwork() {
+    mesh.setDebugMsgTypes(ERROR | STARTUP);  
+    mesh.init(MESH_PREFIX, MESH_PASSWORD, &userScheduler, MESH_PORT);  
+    mesh.onReceive(receivedCallback);
+    mesh.onNewConnection(newConnectionCallback);
 }
 
-void nodeTimeAdjustedCallback(int32_t offset) {
-    Serial.printf("Adjusted time %u. Offset = %d\n", mesh.getNodeTime(),offset);
+// Check and process serial input
+void checkAndProcessSerialInput() {
+    if (Serial.available() > 0) {  
+        incomingMessage = Serial.readStringUntil('\n');  
+        Serial.println("I received: " + incomingMessage);
+        handleIncomingMessage();  
+    }
 }
 
+// Handle specific incoming messages
+void handleIncomingMessage() {
+    if (incomingMessage == "stop_leaphy") {
+        digitalWrite(14, LOW);  
+        sendMessage();
+    } else if (incomingMessage == "start_leaphy") {
+        digitalWrite(14, HIGH);  
+        sendMessage();
+    }
+}
 
 void setup() {
-  Serial.begin(115200);
-
-//mesh.setDebugMsgTypes( ERROR | MESH_STATUS | CONNECTION | SYNC | COMMUNICATION | GENERAL | MSG_TYPES | REMOTE ); // all types on
-  mesh.setDebugMsgTypes( ERROR | STARTUP );  // set before init() so that you can see startup messages
-
-  mesh.init( MESH_PREFIX, MESH_PASSWORD, &userScheduler, MESH_PORT );
-  mesh.onReceive(&receivedCallback);
-  mesh.onNewConnection(&newConnectionCallback);
-  mesh.onChangedConnections(&changedConnectionCallback);
-  mesh.onNodeTimeAdjusted(&nodeTimeAdjustedCallback);
-  
-  pinMode(16, OUTPUT); // set pin 16 as output
-  
-  userScheduler.addTask( taskSendMessage );
-  taskSendMessage.enable();
+    Serial.begin(115200);  
+    pinMode(16, OUTPUT);  
+    setupMeshNetwork();  
+    userScheduler.addTask(taskSendMessage);
+    taskSendMessage.enable();  
 }
 
 void loop() {
-   // send data only when you receive data:
-  // it will run the user scheduler as well
-
-    if (Serial.available() > 0) {
-    // read the incoming message:
-    incomingMessage = Serial.readStringUntil('\n');
-
-    // say what you got:
-    Serial.print("I received: ");
-    Serial.println(incomingMessage);
-
-    // Check the received message
-    if (incomingMessage == "stop_leaphy") {
-      digitalWrite(14, LOW); // Turn pin 16 ON
-      sendMessage();
-    } else if (incomingMessage == "start_leaphy") {
-      digitalWrite(14, HIGH); // Turn pin 16 OFF
-      sendMessage();
-    }
-  }
-  mesh.update();
-
+    checkAndProcessSerialInput();  
+    mesh.update();  
 }

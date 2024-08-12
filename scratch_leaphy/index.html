@@ -9,145 +9,66 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            background-color: #e5e5e5;
-            color: #333;
-            font-family: Arial, sans-serif;
+            background-color: #e5e5e5; /* Light grey background for contrast */
+            color: #333; /* Dark grey text color for readability */
+            font-family: Arial, sans-serif; /* Setting a clean, modern font */
         }
-        /* Container styles */
+
+        /* Top container styles */
         .top-container {
             display: flex;
-            flex-wrap: wrap;
-            background-color: #e8e2e2;
-            padding: 10px;
+            background-color: #e8e2e2; /* Blue color similar to the screenshot */
         }
+
         /* CSV display area styles */
         #csv-display {
             flex: 1;
             padding: 20px;
             overflow: auto;
-            background-color: #fff;
-            margin-bottom: 10px;
-            min-height: 50vh;
+            height: 50vh;
+            background-color: #fff; /* White background for the display area */
+            margin-right: 20px; /* Move the display area to the right */
         }
-        /* Control panel and Node ID container styles */
-        #controls, #node-id-container {
-            flex: 1;
-            padding: 10px;
-            box-sizing: border-box;
-            background-color: #343444;
-            color: white;
-            margin-bottom: 10px;
+
+        /* Control panel styles */
+        #controls, #project, #node-id-container {
+            width: 33%; /* Adjusted width to fit three sections */
+            padding: 1px;
+            margin: 1px;
+            color: #ffffff; /* White text color */
         }
 
         /* Serial interface styles */
         #serial-interface {
+            width: 100%;
             padding: 10px;
             border-top: 1px solid #ccc;
-            background-color: #343444;
-            color: #ffffff;
+            background-color: #343444; /* A darker shade of blue for the bottom area */
+            color: #ffffff; /* White text for visibility */
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 10px;
         }
 
         /* Button styles */
         button {
-            background-color: #06778f;
-            color: #ffffff;
+            background-color: #06778f; /* Green color for buttons */
+            color: #ffffff; /* White text on buttons */
             border: none;
-            padding: 10px;
-            margin: 5px 0;
+            padding: 10px 20px;
+            margin: 5px;
             border-radius: 5px;
             cursor: pointer;
-            width: 100%;
-            box-sizing: border-box;
         }
 
         button:hover {
-            background-color: #218838;
+            background-color: #218838; /* Darker green on hover */
         }
 
         /* Input field styles */
-        input[type="text"], input[type="number"], input[type="range"] {
+        input[type="text"], input[type="number"] {
             padding: 10px;
-            margin: 5px 0;
+            margin: 5px;
             border-radius: 5px;
             border: 1px solid #ccc;
-            width: calc(100% - 22px); /* Full width minus padding and border */
-            box-sizing: border-box;
-        }
-
-        /* Specific layout adjustments for the project area */
-        #project {
-            margin-bottom: 10px;
-        }
-
-        /* Responsive adjustments */
-        @media (min-width: 768px) {
-            .top-container {
-                flex-wrap: nowrap;
-            }
-
-            #controls, #node-id-container {
-                flex: 0 0 33%;
-                margin-bottom: 0;
-            }
-
-            #csv-display {
-                flex: 1;
-                margin-right: 20px;
-                min-height: 50vh;
-            }
-
-            #serial-interface {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-
-            #serial-interface > div {
-                flex: 1;
-                margin-right: 10px;
-            }
-
-            #serial-interface > div:last-child {
-                margin-right: 0;
-            }
-
-            button, input[type="text"], input[type="number"], input[type="range"] {
-                width: auto;
-            }
-        }
-        /* Responsive adjustments for smaller screens */
-        @media (max-width: 767px) {
-            .top-container {
-                flex-direction: column;
-            }
-
-            #csv-display {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-
-            #controls, #node-id-container {
-                flex: 1;
-                width: 100%;
-            }
-
-            #serial-interface {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 480px) {
-            #serial-interface > div {
-                margin-right: 0;
-                width: 100%;
-            }
-
-            h2, h3 {
-                margin: 5px 0;
-            }
         }
     </style>
     <link rel="stylesheet" href="https://unpkg.com/leopard@^1/dist/index.min.css" />
@@ -155,15 +76,19 @@
 <body>
     <div class="top-container">
         <div id="controls">
+            <!-- Control buttons -->
             <button id="greenFlag">Start position</button>
             <button id="connect">Connect Serial</button>
             <button id="myButton">Simulate</button>
             <button id="download-btn">Download CSV</button>
+            <!-- Project area -->
             <div id="project"></div>
         </div>
-
+        <!-- CSV display area -->
+        
         <pre id="csv-display"></pre>
 
+        <!-- Node ID section -->
         <div id="node-id-container">
             <input type="number" id="Leaphy-id_1" value="996190084" min="100000000">
             <button id="node-id_1">Set Leaphy ID 1</button>
@@ -195,8 +120,14 @@
             <input type="number" id="Leaphy-id_10" value="999999999" min="100000000">
             <button id="node-id_10">Set Leaphy ID 10</button>
         </div>
+
     </div>
-    <div id="serial-interface">
+
+
+
+    <!-- Serial interface -->
+    <div id="serial-interface" style="display: flex; justify-content: flex-start; padding: 10px;">
+        <!-- Left side -->
         <div>
             <div style="display: flex; align-items: center;">
                 <h2 style="margin-right: 10px;">Send to Leaphy</h2>
@@ -205,25 +136,32 @@
             <input type="text" id="messageToSend" placeholder="Enter message to send">
             <button id="send">Send Message</button>
         </div>
+    </div>
 
+    <!-- Simulate interface -->
+    <div id="serial-interface" style="display: flex; justify-content: flex-start; padding: 10px;">
+        <!-- Left side -->
         <div>
             <h2>Speed: <span id="speedValue">2.0</span></h2>
             <input type="range" id="speedInput" min="0" max="10" value="2" step="0.1">
             <button id="speedButton">Set Speed</button>
         </div>
         
+        <!-- Right side -->
         <div>
             <h2>Turn Degree: <span id="turnValue">10</span></h2>
             <input type="range" id="turnInput" min="0" max="90" value="10">
             <button id="turnButton">Set Turn Degree</button>
         </div>
         
+        <!-- Right side -->
         <div>
             <h2>Leaphys</h2>
             <input type="number" id="numLeaphys" min="1" max="5" value="5">
             <button id="showButton">Show Leaphys</button>
         </div>
 
+        <!-- Right side -->
         <div>
             <h2>Template</h2>
             <input type="number" id="template" min="1" max="7" value="1">
@@ -236,7 +174,8 @@
             <button id="framerateButton">Change Framerate</button>
         </div>
     </div>
-    
+
+
     <script type="module">
         import project from "./index.js";
         import { csvFileData } from '../Lib/csv.js';
@@ -253,7 +192,7 @@
         // Function to display CSV data
         async function displayCSVData() {
             const displayArea = document.getElementById('csv-display');
-            displayArea.textContent = await csvFileData;
+            displayArea.textContent = await csvFileData; // Assuming csvFileData() returns a Promise that resolves to CSV data
         }
 
         displayCSVData();
