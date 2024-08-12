@@ -1,99 +1,78 @@
 #include "painlessMesh.h"
-#include <vector>
-#include <map>
 
 // Mesh network configuration
 #define MESH_PREFIX "whateverYouLike"
 #define MESH_PASSWORD "somethingSneaky"
 #define MESH_PORT 5555
 
-// Pin definitions for sensors and motors
-const int trigPin = 20; 
-const int echoPin = 19;
-const int leftSensorPin = 17;
-const int rightSensorPin = 18;
-const int pwmBPin = 11;
-const int dirBPin = 4;
-const int pwmAPin = 3;
-const int dirAPin = 2;
+// Pin definitions for sensors, motors, LEDs, and encoders
+#define TRIG_PIN 20
+#define ECHO_PIN 19
+#define LEFT_SENSOR_PIN 17
+#define RIGHT_SENSOR_PIN 18
+#define PWM_B_PIN 11
+#define DIR_B_PIN 4
+#define PWM_A_PIN 3
+#define DIR_A_PIN 2
+#define RED_PIN 5
+#define GREEN_PIN 6
+#define BLUE_PIN 7
+#define RED_PIN_TOP 14
+#define STOP_CONTROL_PIN 16
+#define ENCODER_LEFT_PIN 23
+#define RED_LED 24
 
-// Pin definitions for LEDs and control
-const int redPin = 5;
-const int greenPin = 6;
-const int bluePin = 7;
-const int RedPinTop = 14;
-const int stopControlPin = 16;
-const int speed = 200;
+// Motor control parameters
+#define MOTOR_SPEED 200
+#define TURN_SPEED_ADJUSTMENT 30
 
+// Sensor and control parameters
+#define DISTANCE_THRESHOLD_CM 20
+#define ENCODER_MAX_COUNT 45
+#define ENCODER_RESET_COUNT 3
+#define ENCODER_RESET_INTERVAL_MS 300
+#define DELAY_AFTER_MOVE_MS 200
+#define SENSOR_READ_DELAY_MS 10
+#define TRIG_PULSE_DURATION_US 10
+#define TRIG_PULSE_DELAY_US 2
+#define PULSE_TIMEOUT_US 30000
 
-// Pin definitions for encoders
-const int encoderLeftPin = 23;
-// const int encoderRightPin = 24;
-const int REDLED = 24;
+// LED and direction state constants
+#define LED_ON HIGH
+#define LED_OFF LOW
+#define FORWARD LOW
+#define BACKWARD HIGH
 
-// Variables to store sensor values and control states
+// Variables for sensor values and control states
 long duration;
 int distance;
-int direction;
 int Stop = 0;
 int leftSensorValue = 0;
 int rightSensorValue = 0;
 
 // Encoder counts
 int leftEncoderCount = 1;
-// int rightEncoderCount = 0;
 int lastLeftEncoderState = LOW;
-int lastRightEncoderState = LOW;
 
-// Timing variables for encoder reset
+// Timing for encoder reset
 unsigned long lastStripeTime = 0;
-const unsigned long interval = 300; // 1 second in milliseconds
-
-// Direction codes
-const int STOP = 434;
-const int FORWARD = 435;
-const int LEFT = 436;
-const int RIGHT = 437;
 
 // Mesh network and scheduler
 Scheduler userScheduler;
 painlessMesh mesh;
 
-// History of directions for averaging
-std::vector<int> directionHistory;
-
-// Function prototypes
-void sendMessage();
-void stopMotors();
-void moveForward();
-void turnLeft();
-void turnRight();
-void updateEncoders();
-
-// Task to send messages periodically
-Task taskSendMessage(TASK_SECOND *0.5, TASK_FOREVER, &sendMessage);
-
-// Send the average direction message
 void sendMessage() {
-    // Create and send the message
-    // String msg = "hallo," + String(mesh.getNodeId()) + "," + String(leftEncoderCount) + "," + String(rightEncoderCount);
-    String msg = String(leftEncoderCount) + "," + String(mesh.getNodeId());
+    String msg = String(mesh.getNodeId()) + "," + String(leftEncoderCount);
     mesh.sendBroadcast(msg);
-
-    // Clear the history after sending the message
-    directionHistory.clear();
 }
 
-// Callback functions for mesh network events
+// Mesh network callbacks
 void receivedCallback(uint32_t from, String& msg) {
-    Serial.printf("Received from %u msg=%s\n", from, msg.c_str());
     if (msg.indexOf("stop_leaphy") != -1) {
-        Serial.printf("Turning pin 16 ON\n");
-        digitalWrite(RedPinTop, LOW);
+        digitalWrite(RED_PIN_TOP, LED_OFF);
         Stop = 1;
     } else if (msg.indexOf("start_leaphy") != -1) {
-        Serial.printf("Turning pin 16 OFF\n");
-        digitalWrite(RedPinTop, HIGH);
+        digitalWrite(RED_PIN_TOP, LED_ON);
         Stop = 0;
     }
 }
@@ -103,61 +82,55 @@ void newConnectionCallback(uint32_t nodeId) {
 }
 
 void changedConnectionCallback() {
-    Serial.printf("Changed connections\n");
+    Serial.printf("Connections changed\n");
 }
 
 void nodeTimeAdjustedCallback(int32_t offset) {
-    Serial.printf("Adjusted time %u. Offset = %d\n", mesh.getNodeTime(), offset);
+    Serial.printf("Time adjusted by %d\n", offset);
 }
 
 // Motor control functions
 void stopMotors() {
-    digitalWrite(pwmAPin, LOW);
-    digitalWrite(pwmBPin, LOW);
-    analogWrite(pwmAPin, 0);
-    analogWrite(pwmBPin, 0);
-
-    digitalWrite(redPin, HIGH);
-    digitalWrite(greenPin, LOW);
-    digitalWrite(bluePin, LOW);
+    analogWrite(PWM_A_PIN, 0);
+    analogWrite(PWM_B_PIN, 0);
+    digitalWrite(RED_PIN, LED_ON);
+    digitalWrite(GREEN_PIN, LED_OFF);
+    digitalWrite(BLUE_PIN, LED_OFF);
 }
 
 void moveForward() {
-    digitalWrite(dirAPin, LOW);
-    digitalWrite(dirBPin, HIGH);
-    analogWrite(pwmAPin, speed);
-    analogWrite(pwmBPin, speed);
-
-    digitalWrite(redPin, LOW);
-    digitalWrite(greenPin, HIGH);
-    digitalWrite(bluePin, LOW);
+    digitalWrite(DIR_A_PIN, FORWARD);
+    digitalWrite(DIR_B_PIN, BACKWARD);
+    analogWrite(PWM_A_PIN, MOTOR_SPEED);
+    analogWrite(PWM_B_PIN, MOTOR_SPEED);
+    digitalWrite(RED_PIN, LED_OFF);
+    digitalWrite(GREEN_PIN, LED_ON);
+    digitalWrite(BLUE_PIN, LED_OFF);
 }
 
 void turnLeft() {
-    digitalWrite(dirAPin, LOW);
-    digitalWrite(dirBPin, LOW); // 
-    analogWrite(pwmAPin, speed-30 );
-    analogWrite(pwmBPin, speed-30);
-
-    digitalWrite(redPin, LOW);
-    digitalWrite(greenPin, LOW);
-    digitalWrite(bluePin, HIGH);
+    digitalWrite(DIR_A_PIN, FORWARD);
+    digitalWrite(DIR_B_PIN, FORWARD);
+    analogWrite(PWM_A_PIN, MOTOR_SPEED - TURN_SPEED_ADJUSTMENT);
+    analogWrite(PWM_B_PIN, MOTOR_SPEED - TURN_SPEED_ADJUSTMENT);
+    digitalWrite(RED_PIN, LED_OFF);
+    digitalWrite(GREEN_PIN, LED_OFF);
+    digitalWrite(BLUE_PIN, LED_ON);
 }
 
 void turnRight() {
-    digitalWrite(dirAPin, HIGH);
-    digitalWrite(dirBPin, HIGH);
-    analogWrite(pwmAPin, speed-30); //
-    analogWrite(pwmBPin, speed-30);
-
-    digitalWrite(redPin, LOW);
-    digitalWrite(greenPin, LOW);
-    digitalWrite(bluePin, HIGH);
+    digitalWrite(DIR_A_PIN, BACKWARD);
+    digitalWrite(DIR_B_PIN, BACKWARD);
+    analogWrite(PWM_A_PIN, MOTOR_SPEED - TURN_SPEED_ADJUSTMENT);
+    analogWrite(PWM_B_PIN, MOTOR_SPEED - TURN_SPEED_ADJUSTMENT);
+    digitalWrite(RED_PIN, LED_OFF);
+    digitalWrite(GREEN_PIN, LED_OFF);
+    digitalWrite(BLUE_PIN, LED_ON);
 }
 
-// Poll encoder pins and update counts
+// Update encoder counts
 void updateEncoders() {
-    int currentLeftEncoderState = digitalRead(encoderLeftPin);
+    int currentLeftEncoderState = digitalRead(ENCODER_LEFT_PIN);
     unsigned long currentTime = millis();
 
     if (currentLeftEncoderState != lastLeftEncoderState) {
@@ -165,36 +138,62 @@ void updateEncoders() {
 
         if (currentLeftEncoderState == LOW) {
             leftEncoderCount++;
-            
-   
-            if (digitalRead(REDLED) == HIGH) {
-                digitalWrite(REDLED, LOW);
-            } else {
-                digitalWrite(REDLED, HIGH);
-            }
 
-            if (leftEncoderCount == 45) {
+            digitalWrite(RED_LED, !digitalRead(RED_LED));
+
+            if (leftEncoderCount == ENCODER_MAX_COUNT) {
                 leftEncoderCount = 0;
             }
 
-            // Reset the encoder count if 3 stripes are counted in 1 second
-            if (leftEncoderCount >= 3 && (currentTime - lastStripeTime) <= interval) {
-                 moveForward();
-                delay (200);
+            if (leftEncoderCount >= ENCODER_RESET_COUNT && (currentTime - lastStripeTime) <= ENCODER_RESET_INTERVAL_MS) {
+                moveForward();
+                delay(DELAY_AFTER_MOVE_MS);
                 leftEncoderCount = 0;
-               
             }
-    
 
-            // Update the last stripe time
+            sendMessage();
             lastStripeTime = currentTime;
-
-          
         }
     }
 }
 
-   
+// Check ultrasonic sensor and update distance
+void checkUltrasonicSensor() {
+    digitalWrite(TRIG_PIN, LOW);
+    delayMicroseconds(TRIG_PULSE_DELAY_US);
+    digitalWrite(TRIG_PIN, HIGH);
+    delayMicroseconds(TRIG_PULSE_DURATION_US);
+    digitalWrite(TRIG_PIN, LOW);
+    duration = pulseIn(ECHO_PIN, HIGH, PULSE_TIMEOUT_US);
+    distance = duration * 0.034 / 2;
+}
+
+// Check line sensors
+void checkLineSensors() {
+    leftSensorValue = digitalRead(LEFT_SENSOR_PIN);
+    rightSensorValue = digitalRead(RIGHT_SENSOR_PIN);
+}
+
+// Determine motor control based on sensors
+void processMotorControl() {
+    if ((distance < DISTANCE_THRESHOLD_CM && distance != 0) || Stop == 1) {
+        stopMotors();
+        delay(5000);  // Delay when stopped
+    } else {
+        if (leftSensorValue == LOW && rightSensorValue == HIGH) {
+            turnRight();
+        } else if (leftSensorValue == HIGH && rightSensorValue == LOW) {
+            turnLeft();
+        } else {
+            moveForward();
+        }
+    }
+}
+
+// Update the mesh network state
+void updateMeshNetwork() {
+    mesh.update();
+}
 
 // Setup function
 void setup() {
@@ -208,67 +207,31 @@ void setup() {
     mesh.onChangedConnections(&changedConnectionCallback);
     mesh.onNodeTimeAdjusted(&nodeTimeAdjustedCallback);
 
-    userScheduler.addTask(taskSendMessage);
-    taskSendMessage.enable();
-
     // Initialize pins
-    pinMode(trigPin, OUTPUT);
-    pinMode(echoPin, INPUT);
-    pinMode(leftSensorPin, INPUT);
-    pinMode(rightSensorPin, INPUT);
-    pinMode(pwmBPin, OUTPUT);
-    pinMode(dirBPin, OUTPUT);
-    pinMode(pwmAPin, OUTPUT);
-    pinMode(dirAPin, OUTPUT);
-    pinMode(redPin, OUTPUT);
-    pinMode(greenPin, OUTPUT);
-    pinMode(bluePin, OUTPUT);
-    pinMode(stopControlPin, OUTPUT);
+    pinMode(TRIG_PIN, OUTPUT);
+    pinMode(ECHO_PIN, INPUT);
+    pinMode(LEFT_SENSOR_PIN, INPUT);
+    pinMode(RIGHT_SENSOR_PIN, INPUT);
+    pinMode(PWM_B_PIN, OUTPUT);
+    pinMode(DIR_B_PIN, OUTPUT);
+    pinMode(PWM_A_PIN, OUTPUT);
+    pinMode(DIR_A_PIN, OUTPUT);
+    pinMode(RED_PIN, OUTPUT);
+    pinMode(GREEN_PIN, OUTPUT);
+    pinMode(BLUE_PIN, OUTPUT);
+    pinMode(STOP_CONTROL_PIN, OUTPUT);
 
     // Initialize encoder pins
-    pinMode(encoderLeftPin, INPUT);
-    // pinMode(encoderRightPin, INPUT);
-    pinMode(REDLED, OUTPUT);
+    pinMode(ENCODER_LEFT_PIN, INPUT);
+    pinMode(RED_LED, OUTPUT);
 }
 
 // Main loop function
 void loop() {
-    // Measure distance with ultrasonic sensor
-    digitalWrite(trigPin, LOW);
-    delayMicroseconds(2);
-    digitalWrite(trigPin, HIGH);
-    delayMicroseconds(10);
-    digitalWrite(trigPin, LOW);
-    duration = pulseIn(echoPin, HIGH, 30000);
-    distance = duration * 0.034 / 2;
-
-    // Read line sensor values
-    leftSensorValue = digitalRead(leftSensorPin);
-    rightSensorValue = digitalRead(rightSensorPin);
-
-    // Determine direction based on sensor readings
-    if ((distance < 20 && distance != 0) || Stop == 1) {
-        stopMotors();
-        delay(5000);
-        direction = STOP;
-    } else {
-        if (leftSensorValue == LOW && rightSensorValue == HIGH) {
-            turnRight();
-            direction = RIGHT;
-        } else if (leftSensorValue == HIGH && rightSensorValue == LOW) {
-            turnLeft();
-            direction = LEFT;
-        } else {
-            moveForward();
-            direction = FORWARD;
-        }
-    }
-
-
-    // Update encoders
+    checkUltrasonicSensor();
+    checkLineSensors();
+    processMotorControl();
     updateEncoders();
-
-    // Delay and update mesh network
-    delay(10);
-    mesh.update();
+    updateMeshNetwork();
+    delay(SENSOR_READ_DELAY_MS);
 }
