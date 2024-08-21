@@ -20,7 +20,7 @@ Task taskSendMessage(TASK_SECOND, 1, sendMessage);  // Create a task to send mes
 
 // Handles received messages
 void receivedCallback(uint32_t from, String &msg) {
-    Serial.printf("%u,%s\n", from, msg.c_str());  
+    Serial.printf("%s\n", msg.c_str());  
 }
 
 // Handles new connections
