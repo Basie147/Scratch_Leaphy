@@ -12,6 +12,7 @@ Leaphy Easybloqs is a block-based programming environment designed specifically 
 
 
 ##Solutions
+The solution of the line follower for the Arduino Nano can be found in this doc on page 7. 
 
 [Solutions File: Integrating Digital Twin Technology into the Master Next Level Engineering](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Soft/Photo/original_solutions.pdf)
 
