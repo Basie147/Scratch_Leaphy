@@ -15,15 +15,6 @@ This manual guides the integration of a Digital Twin (DT) into the Master Next L
 - **Skill Development**: Understanding complex concepts through practical application.
 - **Real-World Simulation**: Scenario testing and data-driven decision-making.
 
-## Learning Experience
-
-The hackathon week covers:
-- **Monday**: Introduction to the robot and DT concepts.
-- **Tuesday**: Development of an interactive system.
-- **Wednesday**: Data management and maintenance detection.
-- **Thursday**: Change management and human factors.
-- **Friday**: Evaluation and professional skills development.
-
 ## Introduction to Digital Twin (DT)
 
 A Digital Twin is a virtual representation of a physical system that mirrors the real-world entity through continuous data exchange. It allows real-time monitoring, simulation, and analysis, enabling prediction of outcomes and optimization of operations.
