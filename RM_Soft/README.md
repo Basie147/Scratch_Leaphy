@@ -13,8 +13,7 @@ Leaphy Easybloqs is a block-based programming environment designed specifically 
 
 ##Solutions
 
-[Solutions File: Integrating Digital Twin Technology into the Master Next Level Engineering](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Main/Integrating%20Digital%20Twin%20Technology%20into%20the%20Master%20Next%20Level%20Engineering.pdf)
-
+[Solutions File: Integrating Digital Twin Technology into the Master Next Level Engineering](https://github.com/Basie147/Scratch_Leaphy/blob/main/RM_Soft/Photo/original_solutions.pdf)
 
 
 ### Arduino Cloud Sketches (Medium Level Programming)
