@@ -1,5 +1,5 @@
 const LEAPHYNUMBER = '4'; // Define the leaphy number
-let COMMAND_NUMBER = '995464128'; // Define the node ID
+let COMMAND_NUMBER = '996254420'; // Define the node ID
 
 import { Sprite, Trigger, Costume, Color } from "https://unpkg.com/leopard@^1/dist/index.esm.js";
 import { connectToSerial, registerListener } from '../Lib/serialFunctions.js';

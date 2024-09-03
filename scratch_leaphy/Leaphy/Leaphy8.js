@@ -1,5 +1,5 @@
 const LEAPHYNUMBER = '8'; // Define the Leaphy number
-const COMMAND_NUMBER = '999999999'; // Define the Node ID from the ESP32
+const COMMAND_NUMBER = '996190092'; // Define the Node ID from the ESP32
 
 import { Sprite, Trigger, Costume, Color } from "https://unpkg.com/leopard@^1/dist/index.esm.js";
 import { connectToSerial, registerListener } from '../Lib/serialFunctions.js';
