@@ -1,0 +1,13 @@
+#include "painlessMesh.h"
+
+painlessMesh mesh;
+
+void setup() {
+  Serial.begin(115200);
+  mesh.init("whateverYouLike", "somethingSneaky", 5555);
+}
+
+void loop() {
+  Serial.println(mesh.getNodeId());
+  delay(2000); // Wait for 2 seconds
+}
