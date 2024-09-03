@@ -23,7 +23,7 @@
 #define RED_LED 24
 
 // Motor control parameters
-#define MOTOR_SPEED 200
+#define MOTOR_SPEED 220
 #define TURN_SPEED_ADJUSTMENT 30
 
 // Sensor and control parameters
