@@ -218,7 +218,7 @@ void getXYZ() {
     y = compass.getY();
     z = compass.getZ();
 
-    // Serial.println("X: " + String(x) + " Y: " + String(y) + " Z: " + String(z)); // Print the values to the serial monitor
+    Serial.println("X: " + String(x) + " Y: " + String(y) + " Z: " + String(z)); // Print the values to the serial monitor
     
     // Create a message with Node ID, X, Y, and Z values
     String msg = String(mesh.getNodeId()) + ",X:" + String(x) + ",Y:" + String(y) + ",Z:" + String(z);

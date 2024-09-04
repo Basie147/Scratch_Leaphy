@@ -73,10 +73,22 @@ async function handleSerialData() {
   }
 }
 
+// function processMessage(msg) {
+  
+//   console.log(msg);
+//   csvFileData.push([msg]);
+//   broadcastData(msg);
+// }
+
 function processMessage(msg) {
-  console.log(msg);
-  csvFileData.push([msg]);
-  broadcastData(msg);
+  const timestamp = new Date();
+  const formattedTimestamp = `${String(timestamp.getDate()).padStart(2, '0')}-${String(timestamp.getMonth() + 1).padStart(2, '0')}-${String(timestamp.getFullYear()).slice(-2)} ${String(timestamp.getHours()).padStart(2, '0')}:${String(timestamp.getMinutes()).padStart(2, '0')}:${String(timestamp.getSeconds()).padStart(2, '0')}`;
+  
+  const msgWithTimestamp = `[${formattedTimestamp}] ${msg}`; // Format the message with the new timestamp
+
+  console.log(msgWithTimestamp);
+  csvFileData.push([msgWithTimestamp]); // Add the message with the timestamp to csvFileData
+  broadcastData(msgWithTimestamp); // Broadcast the message with the timestamp
 }
 
 // Add event listener to button
